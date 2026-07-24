@@ -509,7 +509,7 @@
                     <div class="col-lg-6" data-aos="fade-right">
                         <div class="qc-image-wrapper">
                             <!-- <div class="qc-bg-decor"></div> -->
-                            <img src="{{ asset(\'images/s-1.png\') }}" alt="Priority Quality Fabric Rolls" class="qc-img img-fluid">
+                            <img src="{{ asset('images/s-1.png') }}" alt="Priority Quality Fabric Rolls" class="qc-img img-fluid">
                         </div>
                     </div>
                     <!-- Right: Content -->
@@ -560,10 +560,10 @@
                     <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left">
                         <div class="dual-images-wrapper">
                             <div class="dual-image-left">
-                                <img src="{{ asset(\'images/s-2.png\') }}" alt="Garment Factory Production" class="img-fluid">
+                                <img src="{{ asset('images/s-2.png') }}" alt="Garment Factory Production" class="img-fluid">
                             </div>
                             <div class="dual-image-right">
-                                <img src="{{ asset(\'images/s-3.png\') }}" alt="Sewing details thread spool" class="img-fluid">
+                                <img src="{{ asset('images/s-3.png') }}" alt="Sewing details thread spool" class="img-fluid">
                             </div>
                         </div>
                     </div>
