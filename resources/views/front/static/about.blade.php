@@ -7,7 +7,7 @@
         ══════════════════════════════════════════════════════ -->
         <section class="page-hero">
 
-            <div class="page-hero-bg" style="background-image: url(\'{{ asset("images/banner/1.png") }}\');">
+            <div class="page-hero-bg" style="background-image: url('{{ asset('images/banner/1.png') }}');">
             </div>
             <div class="page-hero-overlay"></div>
 
@@ -29,7 +29,7 @@
 
                         <!-- Button + Subtitle side by side -->
                         <div class="hero-bottom-row" data-aos="fade-up" data-aos-delay="180">
-                            <a href="{{ route(\'listing\') }}" class="btn-accent flex-shrink-0">Explore Products</a>
+                            <a href="{{ route('listing') }}" class="btn-accent flex-shrink-0">Explore Products</a>
                             <p class="page-hero-subtitle">
                                 Helping Importers Source Premium Towels And Garments Through Trusted Indian
                                 Manufacturers With Complete Sourcing, Quality Inspection, And Logistics Support.
@@ -68,7 +68,7 @@
 
                     <!-- Right col: image -->
                     <div class="col-lg-5 offset-lg-1" data-aos="fade-up" data-aos-delay="150">
-                        <img src="{{ asset(\'images/about1.jpg\') }}" alt="Balaji Garments manufacturer sourcing unit"
+                        <img src="{{ asset('images/about1.jpg') }}" alt="Balaji Garments manufacturer sourcing unit"
                             class="img-fluid rounded-3 w-100" style="object-fit: cover; height: 400px;">
                     </div>
 
@@ -135,7 +135,7 @@
             </div>
         </div>
         <!-- misson-vison -->
-        <div class="section service-section" style="background-image: url(\'{{ asset("images/servicebg.png") }}\');">
+        <div class="section service-section" style="background-image: url('{{ asset('images/servicebg.png') }}');">
             <div class="container text-center">
                 <div class="mb-5 pb-lg-3" data-aos="fade-up">
                     <p class="section-label d-inline-block text-uppercase mb-2">Our Purpose</p>
@@ -157,7 +157,7 @@
                             <div class=" col-md-6" data-aos="fade-up" data-aos-delay="100">
                                 <div class="service-card text-start">
                                     <div class="card-hover-overlay"
-                                        style="background-image: url(\'{{ asset("images/vision_mission/vision.jpg") }}\');">
+                                        style="background-image: url('{{ asset('images/vision_mission/vision.jpg') }}');">
                                     </div>
                                     <div class="service-icon">
                                         <i class="ri-target-fill"></i>
@@ -173,7 +173,7 @@
                             <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
                                 <div class="service-card text-start">
                                     <div class="card-hover-overlay"
-                                        style="background-image: url(\'{{ asset("images/vision_mission/mission.png") }}\');">
+                                        style="background-image: url('{{ asset('images/vision_mission/mission.png') }}');">
                                     </div>
                                     <div class="service-icon">
                                         <i class="ri-shake-hands-fill"></i>
@@ -220,7 +220,7 @@
                 <!-- ROW 2: Image left | Strengths list right -->
                 <div class="row g-lg-5  pt-lg-4 align-items-stretch">
                     <div class="col-lg-6 d-flex" data-aos="fade-up">
-                        <img src="{{ asset(\'images/about2.jpg\') }}" alt="manufacturer sourcing facility"
+                        <img src="{{ asset('images/about2.jpg') }}" alt="manufacturer sourcing facility"
                             class="img-fluid rounded-3 w-100" style="object-fit: cover; min-height: 360px;">
                     </div>
 
@@ -274,7 +274,7 @@
              SECTION 4 — Our Signature (full-bleed banner)
         ══════════════════════════════════════════════════════ -->
         <section class="about-signature-section">
-            <div class="sig-bg" style="background-image: url(\'{{ asset("images/about3.jpg") }}\');"></div>
+            <div class="sig-bg" style="background-image: url('{{ asset('images/about3.jpg') }}');"></div>
             <div class="sig-overlay"></div>
 
             <div class="container sig-content text-center" data-aos="fade-up">
@@ -312,7 +312,7 @@
                     <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
                         <div class="cert-card">
                             <div class="cert-img-wrap">
-                                <img src="{{ asset(\'images/certificate/1.jpg\') }}" alt="Quality Certificate"
+                                <img src="{{ asset('images/certificate/1.jpg') }}" alt="Quality Certificate"
                                     class="img-fluid rounded-3 w-100">
                             </div>
                             <div class="cert-info">
@@ -343,13 +343,13 @@
                                 <div class="trust-avatar" style="background-color:#9aa5b0;"></div>
                                 <div class="trust-avatar" style="background-color:#5c6e7e;"></div>
                             </div>
-                            <span class="trust-label">Trusted By Importers Worldwide</span>
+                            <span class="trust-label">What Our Partners Say About Balaji</span>
                         </div>
                     </div>
                     <!-- Right: Label + Heading -->
                     <div class="col-lg-5 offset-lg-3" data-aos="fade-up" data-aos-delay="100">
                         <p class="section-label mb-2">Testimonial</p>
-                        <h2 class="section-heading mb-0">What Our Partners Say About Balaji</h2>
+                        <h2 class="section-heading mb-0">Trusted By Importers Worldwide</h2>
                     </div>
                 </div>
 
@@ -378,11 +378,11 @@
                                         <div class="author-avatar"></div>
                                         <div class="author-info">
                                             <p class="author-name">Anoop G</p>
-                                            <p class="author-title">Sourcing Lead </p>
+                                            <p class="author-title">Distributor, Ghana </p>
                                         </div>
                                     </div>
                                     <span class="testimonial-quote-icon">
-                                        <img src="{{ asset(\'images/quote.png\') }}" alt="" class="img-fluid">
+                                        <img src="{{ asset('images/quote.png') }}" alt="" class="img-fluid">
                                     </span>
                                 </div>
                             </div>
@@ -408,11 +408,11 @@
                                         <div class="author-avatar"></div>
                                         <div class="author-info">
                                             <p class="author-name">Ashraf Patel</p>
-                                            <p class="author-title">Managing Director</p>
+                                            <p class="author-title">Managing Director, East Africa</p>
                                         </div>
                                     </div>
                                     <span class="testimonial-quote-icon">
-                                        <img src="{{ asset(\'images/quote.png\') }}" alt="" class="img-fluid">
+                                        <img src="{{ asset('images/quote.png') }}" alt="" class="img-fluid">
                                     </span>
                                 </div>
                             </div>
@@ -436,11 +436,11 @@
                                         <div class="author-avatar"></div>
                                         <div class="author-info">
                                             <p class="author-name">Jayesh Khanchandani</p>
-                                            <p class="author-title">Head of Procurement, JK Wholesale Co.</p>
+                                            <p class="author-title">Head of Procurement, West Africa</p>
                                         </div>
                                     </div>
                                     <span class="testimonial-quote-icon">
-                                        <img src="{{ asset(\'images/quote.png\') }}" alt="" class="img-fluid">
+                                        <img src="{{ asset('images/quote.png') }}" alt="" class="img-fluid">
                                     </span>
                                 </div>
                             </div>
@@ -463,11 +463,11 @@
                                         <div class="author-avatar"></div>
                                         <div class="author-info">
                                             <p class="author-name"> Ravi Lalwani</p>
-                                            <p class="author-title">Retail Customer</p>
+                                            <p class="author-title">Customer , UAE</p>
                                         </div>
                                     </div>
                                     <span class="testimonial-quote-icon">
-                                        <img src="{{ asset(\'images/quote.png\') }}" alt="" class="img-fluid">
+                                        <img src="{{ asset('images/quote.png') }}" alt="" class="img-fluid">
                                     </span>
                                 </div>
                             </div>

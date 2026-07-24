@@ -384,7 +384,7 @@
             <i class="ri-download-2-line"></i>
             <span>Catalouge</span>
         </a>
-        <a href="https://wa.me/919004711558" target="_blank" rel="noopener" class="floating-btn whatsapp-btn"
+        <a href="#" id="whatsapp" data-bs-toggle="modal" data-bs-target="#whatsappModal" target="_blank" rel="noopener" class="floating-btn whatsapp-btn"
             id="whatsappFloatBtn" title="Chat on WhatsApp">
             <i class="ri-whatsapp-line"></i>
         </a>

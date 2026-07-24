@@ -1,13 +1,17 @@
 @extends('layouts.front')
+
 @section('css')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.4/build/css/intlTelInput.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
 @endsection
+
 @section('content')
-<!-- ── Page Hero ──────────────────────────────────────── -->
+
+
+        <!-- ── Page Hero ──────────────────────────────────────── -->
         <section class="page-hero product-page-hero">
 
-            <div class="page-hero-bg" style="background-image: url('images/banner/2.png');">
+            <div class="page-hero-bg" style="background-image: url('{{ asset('images/banner/2.png') }}');">
             </div>
             <div class="page-hero-overlay"></div>
 
@@ -16,7 +20,7 @@
                     <div class="col-12 hero-content">
 
                         <div class="page-breadcrumb" data-aos="fade-up">
-                            <a href="index.html">Home</a>
+                            <a href="{{ route('home') }}">Home</a>
                             <span class="sep">/</span>
                             <span class="current">Products</span>
                         </div>
@@ -27,7 +31,7 @@
 
                         <!-- Button + Subtitle side by side -->
                         <div class="hero-bottom-row" data-aos="fade-up" data-aos-delay="180">
-                            <a href="contact.html" class="btn-accent flex-shrink-0">Request a Catalogue</a>
+                            <a href="{{ route('contact') }}" class="btn-accent flex-shrink-0">Request a Catalogue</a>
                             <p class="page-hero-subtitle">
                                 From premium cotton towels and hotel linens to custom garments — explore our
                                 complete export-ready product range sourced from India's finest manufacturers.
@@ -39,8 +43,6 @@
             </div>
 
         </section>
-
-
         @if(session('success'))
             <div class="container mt-4">
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -49,6 +51,8 @@
                 </div>
             </div>
         @endif
+
+
         <!-- ── Sticky Category Filter ─────────────────────────── -->
         <div class="product-filter-bar py-lg-4 py-2">
             <div class="container">
@@ -92,7 +96,7 @@
                         <a href="#" class="collection-card">
                             <div class="card-img-wrapper">
                                 <span class="card-tag">Cotton Terry</span>
-                                <img src="images/cat1/product1.jpg" alt="Towel Rose — Cotton Terry">
+                                <img src="{{ asset('images/cat1/product1.jpg') }}" alt="Towel Rose — Cotton Terry">
                                 <div class="card-btn"><span>View Details</span></div>
                             </div>
                             <h3 class="card-title">Towel Rose</h3>
@@ -145,7 +149,7 @@
                         <a href="#" class="collection-card">
                             <div class="card-img-wrapper">
                                 <span class="card-tag">Cotton Terry</span>
-                                <img src="images/cat1/product2.jpg" alt="Towel Eventx — Cotton Terry">
+                                <img src="{{ asset('images/cat1/product2.jpg') }}" alt="Towel Eventx — Cotton Terry">
                                 <div class="card-btn"><span>View Details</span></div>
                             </div>
                             <h3 class="card-title">Towel Eventx</h3>
@@ -198,7 +202,7 @@
                         <a href="#" class="collection-card">
                             <div class="card-img-wrapper">
                                 <span class="card-tag">Cotton Terry</span>
-                                <img src="images/cat1/product3.jpg" alt="Towel Brave — Cotton Terry">
+                                <img src="{{ asset('images/cat1/product3.jpg') }}" alt="Towel Brave — Cotton Terry">
                                 <div class="card-btn"><span>View Details</span></div>
                             </div>
                             <h3 class="card-title">Towel Brave</h3>
@@ -258,7 +262,7 @@
                         <a href="#" class="collection-card">
                             <div class="card-img-wrapper">
                                 <span class="card-tag">Mixed Blend</span>
-                                <img src="images/cat2/product1.jpg" alt="Towel Waves — Mixed Blend">
+                                <img src="{{ asset('images/cat2/product1.jpg') }}" alt="Towel Waves — Mixed Blend">
                                 <div class="card-btn"><span>View Details</span></div>
                             </div>
                             <h3 class="card-title">Towel Waves</h3>
@@ -299,7 +303,7 @@
                         <a href="#" class="collection-card">
                             <div class="card-img-wrapper">
                                 <span class="card-tag">Mixed Blend</span>
-                                <img src="images/cat2/product2.jpg" alt="Dark Polo — Mixed Blend">
+                                <img src="{{ asset('images/cat2/product2.jpg') }}" alt="Dark Polo — Mixed Blend">
                                 <div class="card-btn"><span>View Details</span></div>
                             </div>
                             <h3 class="card-title">Dark Polo</h3>
@@ -340,7 +344,7 @@
                         <a href="#" class="collection-card">
                             <div class="card-img-wrapper">
                                 <span class="card-tag">Mixed Blend</span>
-                                <img src="images/cat2/product3.jpg" alt="Dark Cabana — Mixed Blend">
+                                <img src="{{ asset('images/cat2/product3.jpg') }}" alt="Dark Cabana — Mixed Blend">
                                 <div class="card-btn"><span>View Details</span></div>
                             </div>
                             <h3 class="card-title">Dark Cabana</h3>
@@ -404,7 +408,7 @@
                         <a href="#" class="collection-card">
                             <div class="card-img-wrapper">
                                 <span class="card-tag">Multi-Stripe</span>
-                                <img src="images/cat3/product1.jpg" alt="Apple Stripe — Multi-Stripe">
+                                <img src="{{ asset('images/cat3/product1.jpg') }}" alt="Apple Stripe — Multi-Stripe">
                                 <div class="card-btn"><span>View Details</span></div>
                             </div>
                             <h3 class="card-title">Apple Stripe</h3>
@@ -445,7 +449,7 @@
                         <a href="#" class="collection-card">
                             <div class="card-img-wrapper">
                                 <span class="card-tag">Multi-Stripe</span>
-                                <img src="images/cat3/product2.jpg" alt="Jewels — Multi-Stripe">
+                                <img src="{{ asset('images/cat3/product2.jpg') }}" alt="Jewels — Multi-Stripe">
                                 <div class="card-btn"><span>View Details</span></div>
                             </div>
                             <h3 class="card-title">Jewels</h3>
@@ -486,7 +490,7 @@
                         <a href="#" class="collection-card">
                             <div class="card-img-wrapper">
                                 <span class="card-tag">Multi-Stripe</span>
-                                <img src="images/cat3/product3.jpg" alt="Candy Stripe — Multi-Stripe">
+                                <img src="{{ asset('images/cat3/product3.jpg') }}" alt="Candy Stripe — Multi-Stripe">
                                 <div class="card-btn"><span>View Details</span></div>
                             </div>
                             <h3 class="card-title">Candy Stripe</h3>
@@ -551,7 +555,73 @@
                         <a href="#" class="collection-card">
                             <div class="card-img-wrapper">
                                 <span class="card-tag">Kitchen</span>
-                                <img src="images/cat4/product1.jpg" alt="Kitchen Towel">
+                                <img src="{{ asset('images/cat4/product1.jpg') }}" alt="Kitchen Towel">
+                                <div class="card-btn"><span>View Details</span></div>
+                            </div>
+                            <h3 class="card-title">Kitchen Towel</h3>
+                            <p class="section-body card-desc">Highly absorbent checks kitchen towels, built for
+                                commercial catering, restaurant usage, and retail bundles.</p>
+
+                            <!-- Toggle Button -->
+                            <button class="btn-specs-toggle" type="button">
+                                <span>Show Specifications</span> <i class="ri-arrow-down-s-line"></i>
+                            </button>
+
+                            <!-- Spec Table -->
+                            <div class="card-specs-table">
+                                <div class="specs-header d-flex justify-content-between">
+                                    <span>Category</span>
+                                    <span>Size</span>
+                                    <span>Weight</span>
+                                    <span>GSM</span>
+                                </div>
+                                <div class="specs-row d-flex justify-content-between">
+                                    <span>Kitchen Towel</span>
+                                    <span>38×64 cm</span>
+                                    <span>60 g</span>
+                                    <span>250</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="80">
+                        <a href="#" class="collection-card">
+                            <div class="card-img-wrapper">
+                                <span class="card-tag">Kitchen</span>
+                                <img src="{{ asset('images/cat4/product2.jpg') }}" alt="Kitchen Towel">
+                                <div class="card-btn"><span>View Details</span></div>
+                            </div>
+                            <h3 class="card-title">Kitchen Towel</h3>
+                            <p class="section-body card-desc">Highly absorbent checks kitchen towels, built for
+                                commercial catering, restaurant usage, and retail bundles.</p>
+
+                            <!-- Toggle Button -->
+                            <button class="btn-specs-toggle" type="button">
+                                <span>Show Specifications</span> <i class="ri-arrow-down-s-line"></i>
+                            </button>
+
+                            <!-- Spec Table -->
+                            <div class="card-specs-table">
+                                <div class="specs-header d-flex justify-content-between">
+                                    <span>Category</span>
+                                    <span>Size</span>
+                                    <span>Weight</span>
+                                    <span>GSM</span>
+                                </div>
+                                <div class="specs-row d-flex justify-content-between">
+                                    <span>Kitchen Towel</span>
+                                    <span>38×64 cm</span>
+                                    <span>60 g</span>
+                                    <span>250</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="80">
+                        <a href="#" class="collection-card">
+                            <div class="card-img-wrapper">
+                                <span class="card-tag">Kitchen</span>
+                                <img src="{{ asset('images/cat4/product3.jpg') }}" alt="Kitchen Towel">
                                 <div class="card-btn"><span>View Details</span></div>
                             </div>
                             <h3 class="card-title">Kitchen Towel</h3>
@@ -611,7 +681,109 @@
                         <a href="#" class="collection-card">
                             <div class="card-img-wrapper">
                                 <span class="card-tag">Hotel Grade</span>
-                                <img src="images/cat5/product1.jpg" alt="Hotel Towel">
+                                <img src="{{ asset('images/cat5/product1.jpg') }}" alt="Hotel Towel">
+                                <div class="card-btn"><span>View Details</span></div>
+                            </div>
+                            <h3 class="card-title">Hotel Towel</h3>
+                            <p class="section-body card-desc">Pristine white hotel towels featuring double-dobby
+                                borders, high durability, and fast-drying loops for 5-star hospitality.</p>
+
+                            <!-- Toggle Button -->
+                            <button class="btn-specs-toggle" type="button">
+                                <span>Show Specifications</span> <i class="ri-arrow-down-s-line"></i>
+                            </button>
+
+                            <!-- Spec Table -->
+                            <div class="card-specs-table">
+                                <div class="specs-header d-flex justify-content-between">
+                                    <span>Category</span>
+                                    <span>Size</span>
+                                    <span>Weight</span>
+                                    <span>GSM</span>
+                                </div>
+                                <div class="specs-row d-flex justify-content-between">
+                                    <span>Face Towel</span>
+                                    <span>33×33 cm</span>
+                                    <span>60 g</span>
+                                    <span>550</span>
+                                </div>
+                                <div class="specs-row d-flex justify-content-between">
+                                    <span>Hand Towel</span>
+                                    <span>50×90 cm</span>
+                                    <span>250 g</span>
+                                    <span>550</span>
+                                </div>
+                                <div class="specs-row d-flex justify-content-between">
+                                    <span>Bath Towel</span>
+                                    <span>70×140 cm</span>
+                                    <span>540 g</span>
+                                    <span>550</span>
+                                </div>
+                                <div class="specs-row d-flex justify-content-between">
+                                    <span>Bath Sheet</span>
+                                    <span>80×160 cm</span>
+                                    <span>705 g</span>
+                                    <span>550</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="80">
+                        <a href="#" class="collection-card">
+                            <div class="card-img-wrapper">
+                                <span class="card-tag">Hotel Grade</span>
+                                <img src="{{ asset('images/cat5/product2.jpg') }}" alt="Hotel Towel">
+                                <div class="card-btn"><span>View Details</span></div>
+                            </div>
+                            <h3 class="card-title">Hotel Towel</h3>
+                            <p class="section-body card-desc">Pristine white hotel towels featuring double-dobby
+                                borders, high durability, and fast-drying loops for 5-star hospitality.</p>
+
+                            <!-- Toggle Button -->
+                            <button class="btn-specs-toggle" type="button">
+                                <span>Show Specifications</span> <i class="ri-arrow-down-s-line"></i>
+                            </button>
+
+                            <!-- Spec Table -->
+                            <div class="card-specs-table">
+                                <div class="specs-header d-flex justify-content-between">
+                                    <span>Category</span>
+                                    <span>Size</span>
+                                    <span>Weight</span>
+                                    <span>GSM</span>
+                                </div>
+                                <div class="specs-row d-flex justify-content-between">
+                                    <span>Face Towel</span>
+                                    <span>33×33 cm</span>
+                                    <span>60 g</span>
+                                    <span>550</span>
+                                </div>
+                                <div class="specs-row d-flex justify-content-between">
+                                    <span>Hand Towel</span>
+                                    <span>50×90 cm</span>
+                                    <span>250 g</span>
+                                    <span>550</span>
+                                </div>
+                                <div class="specs-row d-flex justify-content-between">
+                                    <span>Bath Towel</span>
+                                    <span>70×140 cm</span>
+                                    <span>540 g</span>
+                                    <span>550</span>
+                                </div>
+                                <div class="specs-row d-flex justify-content-between">
+                                    <span>Bath Sheet</span>
+                                    <span>80×160 cm</span>
+                                    <span>705 g</span>
+                                    <span>550</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="80">
+                        <a href="#" class="collection-card">
+                            <div class="card-img-wrapper">
+                                <span class="card-tag">Hotel Grade</span>
+                                <img src="{{ asset('images/cat5/product3.jpg') }}" alt="Hotel Towel">
                                 <div class="card-btn"><span>View Details</span></div>
                             </div>
                             <h3 class="card-title">Hotel Towel</h3>
@@ -689,7 +861,97 @@
                         <a href="#" class="collection-card">
                             <div class="card-img-wrapper">
                                 <span class="card-tag">Beach</span>
-                                <img src="images/cat6/product1.jpg" alt="Beach Towel">
+                                <img src="{{ asset('images/cat6/product1.jpg') }}" alt="Beach Towel">
+                                <div class="card-btn"><span>View Details</span></div>
+                            </div>
+                            <h3 class="card-title">Beach Towel</h3>
+                            <p class="section-body card-desc">Extra-soft, lint-free beach towels with sand-resistant
+                                weave, vibrant reactive dyed stripe prints, and maximum comfort.</p>
+
+                            <!-- Toggle Button -->
+                            <button class="btn-specs-toggle" type="button">
+                                <span>Show Specifications</span> <i class="ri-arrow-down-s-line"></i>
+                            </button>
+
+                            <!-- Spec Table -->
+                            <div class="card-specs-table">
+                                <div class="specs-header d-flex justify-content-between">
+                                    <span>Category</span>
+                                    <span>Size</span>
+                                    <span>Weight</span>
+                                    <span>GSM</span>
+                                </div>
+                                <div class="specs-row d-flex justify-content-between">
+                                    <span>Beach Towel</span>
+                                    <span>70×140 cm</span>
+                                    <span>400 g</span>
+                                    <span>408</span>
+                                </div>
+                                <div class="specs-row d-flex justify-content-between">
+                                    <span>Beach Towel</span>
+                                    <span>80×160 cm</span>
+                                    <span>525 g</span>
+                                    <span>408</span>
+                                </div>
+                                <div class="specs-row d-flex justify-content-between">
+                                    <span>Beach Towel</span>
+                                    <span>90×170 cm</span>
+                                    <span>625 g</span>
+                                    <span>408</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="80">
+                        <a href="#" class="collection-card">
+                            <div class="card-img-wrapper">
+                                <span class="card-tag">Beach</span>
+                                <img src="{{ asset('images/cat6/product2.jpg') }}" alt="Beach Towel">
+                                <div class="card-btn"><span>View Details</span></div>
+                            </div>
+                            <h3 class="card-title">Beach Towel</h3>
+                            <p class="section-body card-desc">Extra-soft, lint-free beach towels with sand-resistant
+                                weave, vibrant reactive dyed stripe prints, and maximum comfort.</p>
+
+                            <!-- Toggle Button -->
+                            <button class="btn-specs-toggle" type="button">
+                                <span>Show Specifications</span> <i class="ri-arrow-down-s-line"></i>
+                            </button>
+
+                            <!-- Spec Table -->
+                            <div class="card-specs-table">
+                                <div class="specs-header d-flex justify-content-between">
+                                    <span>Category</span>
+                                    <span>Size</span>
+                                    <span>Weight</span>
+                                    <span>GSM</span>
+                                </div>
+                                <div class="specs-row d-flex justify-content-between">
+                                    <span>Beach Towel</span>
+                                    <span>70×140 cm</span>
+                                    <span>400 g</span>
+                                    <span>408</span>
+                                </div>
+                                <div class="specs-row d-flex justify-content-between">
+                                    <span>Beach Towel</span>
+                                    <span>80×160 cm</span>
+                                    <span>525 g</span>
+                                    <span>408</span>
+                                </div>
+                                <div class="specs-row d-flex justify-content-between">
+                                    <span>Beach Towel</span>
+                                    <span>90×170 cm</span>
+                                    <span>625 g</span>
+                                    <span>408</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="80">
+                        <a href="#" class="collection-card">
+                            <div class="card-img-wrapper">
+                                <span class="card-tag">Beach</span>
+                                <img src="{{ asset('images/cat6/product3.jpg') }}" alt="Beach Towel">
                                 <div class="card-btn"><span>View Details</span></div>
                             </div>
                             <h3 class="card-title">Beach Towel</h3>
@@ -761,7 +1023,7 @@
                         <a href="#" class="collection-card">
                             <div class="card-img-wrapper">
                                 <span class="card-tag">Garments</span>
-                                <img src="images/cat7/product1.jpg" alt="Collar T-Shirt">
+                                <img src="{{ asset('images/cat7/product1.jpg') }}" alt="Collar T-Shirt">
                                 <div class="card-btn"><span>View Details</span></div>
                             </div>
                             <h3 class="card-title">Collar T-Shirt</h3>
@@ -794,7 +1056,7 @@
                         <a href="#" class="collection-card">
                             <div class="card-img-wrapper">
                                 <span class="card-tag">Garments</span>
-                                <img src="images/cat7/product2.jpg" alt="Lurex Ladies Dress">
+                                <img src="{{ asset('images/cat7/product2.jpg') }}" alt="Lurex Ladies Dress">
                                 <div class="card-btn"><span>View Details</span></div>
                             </div>
                             <h3 class="card-title">Lurex Ladies Dress</h3>
@@ -827,7 +1089,7 @@
                         <a href="#" class="collection-card">
                             <div class="card-img-wrapper">
                                 <span class="card-tag">Garments</span>
-                                <img src="images/cat7/product3.jpg" alt="Trousers">
+                                <img src="{{ asset('images/cat7/product3.jpg') }}" alt="Trousers">
                                 <div class="card-btn"><span>View Details</span></div>
                             </div>
                             <h3 class="card-title">Trousers</h3>
@@ -859,195 +1121,8 @@
             </div>
         </section>
 
-    </main>
-
     
-
-@endsection
-
-@section('js')
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.4/build/js/intlTelInput.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
-<!-- Products page filter scroll logic -->
-    <script>
-        // Smooth scroll for category filter buttons
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Update active state
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('is-active'));
-                btn.classList.add('is-active');
-                // Scroll to target section
-                const target = document.getElementById(btn.dataset.target);
-                if (target) {
-                    const offset = 140; // navbar + filter bar height
-                    const top = target.getBoundingClientRect().top + window.scrollY - offset;
-                    window.scrollTo({ top, behavior: 'smooth' });
-                }
-            });
-        });
-
-        // Highlight active filter based on scroll position
-        const sections = document.querySelectorAll('.product-cat-section');
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(sec => {
-                const top = sec.getBoundingClientRect().top;
-                if (top < 200) current = sec.id;
-            });
-            filterBtns.forEach(btn => {
-                btn.classList.toggle('is-active', btn.dataset.target === current);
-            });
-        }, { passive: true });
-
-        // Enquiry Modal Form Logic
-        document.addEventListener('DOMContentLoaded', () => {
-            const phoneInputEl = document.querySelector("#modal-phone");
-            const countrySelectEl = document.querySelector("#modal-country");
-
-            // Initialize intl-tel-input
-            let iti = null;
-            if (phoneInputEl) {
-                iti = window.intlTelInput(phoneInputEl, {
-                    initialCountry: "auto",
-                    geoIpLookup: callback => {
-                        fetch("https://ipapi.co/json")
-                            .then(res => res.json())
-                            .then(data => callback(data.country_code))
-                            .catch(() => callback("in")); // Fallback to India
-                    },
-                    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.4/build/js/utils.js"
-                });
-            }
-
-            // Country list for Choices.js dropdown populating
-            const countryList = @json($countries->map(fn($c) => ['name' => ucwords(strtolower($c->country)), 'code' => $c->iso])->values()->all());
-
-            let choicesInstance = null;
-            if (countrySelectEl) {
-                countryList.forEach(country => {
-                    const opt = document.createElement("option");
-                    opt.value = country.name;
-                    opt.textContent = country.name;
-                    countrySelectEl.appendChild(opt);
-                });
-
-                // Initialize Choices.js
-                choicesInstance = new Choices(countrySelectEl, {
-                    searchEnabled: true,
-                    itemSelectText: '',
-                    shouldSort: false,
-                    placeholder: true,
-                    placeholderValue: "Select your country"
-                });
-            }
-
-            // Sync phone flag with country selector when country changes
-            countrySelectEl?.addEventListener('change', (e) => {
-                const selectedCountryName = e.target.value;
-                const match = countryList.find(c => c.name === selectedCountryName);
-                if (match && iti) {
-                    iti.setCountry(match.code.toLowerCase());
-                }
-            });
-
-            // Sync country selector with phone flag when flag changes
-            phoneInputEl?.addEventListener('countrychange', () => {
-                if (iti && choicesInstance) {
-                    const countryData = iti.getSelectedCountryData();
-                    if (countryData && countryData.iso2) {
-                        const match = countryList.find(c => c.code.toLowerCase() === countryData.iso2.toLowerCase());
-                        if (match) {
-                            choicesInstance.setChoiceByValue(match.name);
-                        }
-                    }
-                }
-            });
-
-            // Map product category section titles to checkbox values
-            const categoryMap = {
-                "Cotton Terry Towels": "Cotton Terry Towels",
-                "Cotton & Polyester Mixed Towels": "Mixed Towels",
-                "Multi-Stripe Towels": "Multi-Stripe Towels",
-                "Kitchen Towels": "Kitchen Towels",
-                "Hotel Towels": "Hotel Towels",
-                "Beach Towels": "Beach Towels",
-                "Garments Collection": "Garments"
-            };
-
-            // Intercept click on Enquirey Now buttons to check the correct checkbox card
-            document.querySelectorAll('.cat-view-all').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const section = btn.closest('.product-cat-section');
-                    if (section) {
-                        const titleEl = section.querySelector('.cat-title');
-                        if (titleEl) {
-                            const catTitle = titleEl.textContent.trim();
-                            const mappedValue = categoryMap[catTitle] || catTitle;
-
-                            // Reset checkboxes
-                            document.querySelectorAll('#modalExportForm input[name="categories[]"]').forEach(cb => {
-                                cb.checked = false;
-                                const wrapper = cb.closest('.col-sm-6');
-                                if (wrapper) {
-                                    wrapper.style.setProperty('display', 'none', 'important');
-                                }
-                            });
-
-                            // Select the targeted category
-                            const matchCheckbox = Array.from(document.querySelectorAll('#modalExportForm input[name="categories[]"]'))
-                                .find(cb => cb.value.toLowerCase() === mappedValue.toLowerCase());
-                            if (matchCheckbox) {
-                                matchCheckbox.checked = true;
-                                const wrapper = matchCheckbox.closest('.col-sm-6');
-                                if (wrapper) {
-                                    wrapper.style.setProperty('display', 'block', 'important');
-                                }
-                            }
-                        }
-                    }
-                });
-            });
-
-            // Submit logic
-            const form = document.getElementById("modalExportForm");
-            form?.addEventListener('submit', (e) => {
-                const checkedCats = [];
-                document.querySelectorAll('#modalExportForm input[name="categories[]"]:checked').forEach(cb => {
-                    checkedCats.push(cb.value);
-                });
-
-                if (checkedCats.length === 0) {
-                    e.preventDefault();
-                    alert("Please select at least one product category of interest.");
-                    return;
-                }
-            });
-        });
-    </script>
-
-    <!-- Floating Brochure Notice Popup -->
-    <div class="brochure-popup" id="brochurePopup">
-        <button class="brochure-popup-close" id="closeBrochurePopup" aria-label="Close popup">
-            <i class="ri-close-line"></i>
-        </button>
-        <div class="brochure-popup-content">
-            <div class="brochure-popup-icon">
-                <i class="ri-file-text-line"></i>
-            </div>
-            <div>
-                <h4 class="brochure-popup-title">Download Complete Product Catalogue</h4>
-                <p class="brochure-popup-text">We have displayed only our primary collections here. To explore all of
-                    our product specifications, GSM, sizes, colours, OEM and private label options, please download our
-                    full product brochure.</p>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- Enquiry Modal -->
-    <div class="modal fade enquiry-modal" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel"
+<div class="modal fade enquiry-modal" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
             <div class="modal-content border-0">
@@ -1071,8 +1146,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group-custom">
                                         <label for="modal-name" class="form-label-custom">Full Name</label>
-                                        <input type="text" id="modal-name" name="name" class="form-control-custom"
-                                            placeholder="e.g. John Doe" required>
+                                        <input type="text" id="modal-name" class="form-control-custom"
+                                            placeholder="e.g. John Doe" required name="name" required>
                                     </div>
                                 </div>
 
@@ -1080,8 +1155,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group-custom">
                                         <label for="modal-email" class="form-label-custom">Corporate Email</label>
-                                        <input type="email" id="modal-email" name="email" class="form-control-custom"
-                                            placeholder="e.g. name@company.com" required>
+                                        <input type="email" id="modal-email" class="form-control-custom"
+                                            placeholder="e.g. name@company.com" required name="email" required>
                                     </div>
                                 </div>
 
@@ -1089,7 +1164,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group-custom">
                                         <label for="modal-phone" class="form-label-custom">Phone Number</label>
-                                        <input type="tel" id="modal-phone" name="phone" class="form-control-custom w-100" required>
+                                        <input type="tel" id="modal-phone" class="form-control-custom w-100" required name="phone" required>
                                     </div>
                                 </div>
 
@@ -1099,7 +1174,6 @@
                                         <label for="modal-country" class="form-label-custom">Country</label>
                                         <select id="modal-country" name="country" class="form-select-custom" required>
                                             <option value="" disabled selected>Select your country</option>
-                                            <!-- Populated dynamically via JS -->
                                         </select>
                                     </div>
                                 </div>
@@ -1147,7 +1221,7 @@
 
                                             <div class="col-sm-6">
                                                 <label class="checkbox-card-label">
-                                                    <input type="checkbox" name="categories[]" value="Cotton Terry Towels"
+                                                    <input type="checkbox" name="categories[]" name="categories" value="Cotton Terry Towels"
                                                         class="checkbox-card-input">
                                                     <span class="checkbox-card-content">
                                                         <span class="checkbox-card-icon"><i
@@ -1159,7 +1233,7 @@
 
                                             <div class="col-sm-6">
                                                 <label class="checkbox-card-label">
-                                                    <input type="checkbox" name="categories[]" value="Mixed Towels"
+                                                    <input type="checkbox" name="categories[]" name="categories" value="Mixed Towels"
                                                         class="checkbox-card-input">
                                                     <span class="checkbox-card-content">
                                                         <span class="checkbox-card-icon"><i
@@ -1171,7 +1245,7 @@
 
                                             <div class="col-sm-6">
                                                 <label class="checkbox-card-label">
-                                                    <input type="checkbox" name="categories[]" value="Multi-Stripe Towels"
+                                                    <input type="checkbox" name="categories[]" name="categories" value="Multi-Stripe Towels"
                                                         class="checkbox-card-input">
                                                     <span class="checkbox-card-content">
                                                         <span class="checkbox-card-icon"><i
@@ -1183,7 +1257,7 @@
 
                                             <div class="col-sm-6">
                                                 <label class="checkbox-card-label">
-                                                    <input type="checkbox" name="categories[]" value="Kitchen Towels"
+                                                    <input type="checkbox" name="categories[]" name="categories" value="Kitchen Towels"
                                                         class="checkbox-card-input">
                                                     <span class="checkbox-card-content">
                                                         <span class="checkbox-card-icon"><i
@@ -1195,7 +1269,7 @@
 
                                             <div class="col-sm-6">
                                                 <label class="checkbox-card-label">
-                                                    <input type="checkbox" name="categories[]" value="Hotel Towels"
+                                                    <input type="checkbox" name="categories[]" name="categories" value="Hotel Towels"
                                                         class="checkbox-card-input">
                                                     <span class="checkbox-card-content">
                                                         <span class="checkbox-card-icon"><i
@@ -1207,7 +1281,7 @@
 
                                             <div class="col-sm-6">
                                                 <label class="checkbox-card-label">
-                                                    <input type="checkbox" name="categories[]" value="Beach Towels"
+                                                    <input type="checkbox" name="categories[]" name="categories" value="Beach Towels"
                                                         class="checkbox-card-input">
                                                     <span class="checkbox-card-content">
                                                         <span class="checkbox-card-icon"><i
@@ -1219,7 +1293,7 @@
 
                                             <div class="col-sm-6">
                                                 <label class="checkbox-card-label">
-                                                    <input type="checkbox" name="categories[]" value="Garments"
+                                                    <input type="checkbox" name="categories[]" name="categories" value="Garments"
                                                         class="checkbox-card-input">
                                                     <span class="checkbox-card-content">
                                                         <span class="checkbox-card-icon"><i
@@ -1231,7 +1305,7 @@
 
                                             <div class="col-sm-6">
                                                 <label class="checkbox-card-label">
-                                                    <input type="checkbox" name="categories[]" value="All Products"
+                                                    <input type="checkbox" name="categories[]" name="categories" value="All Products"
                                                         class="checkbox-card-input">
                                                     <span class="checkbox-card-content">
                                                         <span class="checkbox-card-icon"><i
@@ -1256,15 +1330,15 @@
                                     </div>
                                 </div>
 
+                                <!-- Submit Button -->
+                                
                                 <!-- Google ReCaptcha -->
                                 <div class="col-12">
                                     <div class="mb-3">
                                         <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
                                     </div>
                                 </div>
-
-                                <!-- Submit Button -->
-                                <div class="col-12 mt-4 text-center">
+<div class="col-12 mt-4 text-center">
                                     <button type="submit" class="btn-accent px-5 py-2.5 mb-3"
                                         style="font-size: 0.95rem;">Send Export Enquiry</button>
                                     <div>
@@ -1282,19 +1356,171 @@
             </div>
         </div>
     </div>
+@endsection
 
-    <!-- ── Floating Action Buttons ───────────────────────── -->
-    <div class="floating-actions">
-        <a href="images/pdf/brochure.pdf" download class="floating-btn brochure-btn" id="downloadBrochureBtn"
-            title="Download Brochure">
-            <i class="ri-download-2-line"></i>
-            <span>Catalouge</span>
-        </a>
-        <a href="https://wa.me/919004711558" target="_blank" rel="noopener" class="floating-btn whatsapp-btn"
-            id="whatsappFloatBtn" title="Chat on WhatsApp">
-            <i class="ri-whatsapp-line"></i>
-        </a>
-    </div>
+@section('js')
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.4/build/js/intlTelInput.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script>
+        // Smooth scroll for category filter buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('is-active'));
+                btn.classList.add('is-active');
+                const target = document.getElementById(btn.dataset.target);
+                if (target) {
+                    const offset = 140;
+                    const top = target.getBoundingClientRect().top + window.scrollY - offset;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            });
+        });
 
+        // Highlight active filter based on URL hash on load
+        window.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash;
+            if (hash) {
+                const targetId = hash.substring(1);
+                const target = document.getElementById(targetId);
+                const btn = document.querySelector(`.filter-btn[data-target="${targetId}"]`);
+                if (target && btn) {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('is-active'));
+                    btn.classList.add('is-active');
+                    setTimeout(() => {
+                        const offset = 140;
+                        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+                        window.scrollTo({ top, behavior: 'smooth' });
+                    }, 300);
+                }
+            }
+        });
 
+        const sections = document.querySelectorAll('.product-cat-section');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(sec => {
+                const top = sec.getBoundingClientRect().top;
+                if (top < 200) current = sec.id;
+            });
+            filterBtns.forEach(btn => {
+                btn.classList.toggle('is-active', btn.dataset.target === current);
+            });
+        }, { passive: true });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const phoneInputEl = document.querySelector("#modal-phone");
+            const countrySelectEl = document.querySelector("#modal-country");
+
+            let iti = null;
+            if (phoneInputEl) {
+                iti = window.intlTelInput(phoneInputEl, {
+                    initialCountry: "auto",
+                    geoIpLookup: callback => {
+                        fetch("https://ipapi.co/json")
+                            .then(res => res.json())
+                            .then(data => callback(data.country_code))
+                            .catch(() => callback("in"));
+                    },
+                    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.4/build/js/utils.js"
+                });
+            }
+
+            const countryList = @json($countries->map(fn($c) => ['name' => ucwords(strtolower($c->country)), 'code' => $c->iso])->values()->all());
+
+            let choicesInstance = null;
+            if (countrySelectEl) {
+                countryList.forEach(country => {
+                    const opt = document.createElement("option");
+                    opt.value = country.name;
+                    opt.textContent = country.name;
+                    countrySelectEl.appendChild(opt);
+                });
+
+                choicesInstance = new Choices(countrySelectEl, {
+                    searchEnabled: true,
+                    itemSelectText: '',
+                    shouldSort: false,
+                    placeholder: true,
+                    placeholderValue: "Select your country"
+                });
+            }
+
+            countrySelectEl?.addEventListener('change', (e) => {
+                const selectedCountryName = e.target.value;
+                const match = countryList.find(c => c.name === selectedCountryName);
+                if (match && iti) {
+                    iti.setCountry(match.code.toLowerCase());
+                }
+            });
+
+            phoneInputEl?.addEventListener('countrychange', () => {
+                if (iti && choicesInstance) {
+                    const countryData = iti.getSelectedCountryData();
+                    if (countryData && countryData.iso2) {
+                        const match = countryList.find(c => c.code.toLowerCase() === countryData.iso2.toLowerCase());
+                        if (match) {
+                            choicesInstance.setChoiceByValue(match.name);
+                        }
+                    }
+                }
+            });
+
+            const categoryMap = {
+                "Cotton Terry Towels": "Cotton Terry Towels",
+                "Cotton & Polyester Mixed Towels": "Mixed Towels",
+                "Multi-Stripe Towels": "Multi-Stripe Towels",
+                "Kitchen Towels": "Kitchen Towels",
+                "Hotel Towels": "Hotel Towels",
+                "Beach Towels": "Beach Towels",
+                "Garments Collection": "Garments"
+            };
+
+            document.querySelectorAll('.cat-view-all').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const section = btn.closest('.product-cat-section');
+                    if (section) {
+                        const titleEl = section.querySelector('.cat-title');
+                        if (titleEl) {
+                            const catTitle = titleEl.textContent.trim();
+                            const mappedValue = categoryMap[catTitle] || catTitle;
+
+                            document.querySelectorAll('#modalExportForm input[name="categories[]"]').forEach(cb => {
+                                cb.checked = false;
+                                const wrapper = cb.closest('.col-sm-6');
+                                if (wrapper) {
+                                    wrapper.style.setProperty('display', 'none', 'important');
+                                }
+                            });
+
+                            const matchCheckbox = Array.from(document.querySelectorAll('#modalExportForm input[name="categories[]"]'))
+                                .find(cb => cb.value.toLowerCase() === mappedValue.toLowerCase());
+                            if (matchCheckbox) {
+                                matchCheckbox.checked = true;
+                                const wrapper = matchCheckbox.closest('.col-sm-6');
+                                if (wrapper) {
+                                    wrapper.style.setProperty('display', 'block', 'important');
+                                }
+                            }
+                        }
+                    }
+                });
+            });
+
+            const form = document.getElementById("modalExportForm");
+            form?.addEventListener('submit', (e) => {
+                const checkedCats = [];
+                document.querySelectorAll('#modalExportForm input[name="categories[]"]:checked').forEach(cb => {
+                    checkedCats.push(cb.value);
+                });
+
+                if (checkedCats.length === 0) {
+                    e.preventDefault();
+                    alert("Please select at least one product category of interest.");
+                    return;
+                }
+            });
+        });
+    </script>
 @endsection

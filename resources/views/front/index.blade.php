@@ -10,7 +10,7 @@
 
                         <!-- Slide 1: Towels -->
                         <div class="swiper-slide">
-                            <div class="hero-slide-bg" style="background-image: url(\'{{ asset("images/slider/1.jpg") }}\');">
+                            <div class="hero-slide-bg" style="background-image: url('{{ asset('images/slider/1.jpg') }}');">
                             </div>
                             <div class="hero-overlay"></div>
                             <div class="hero-slide-content">
@@ -40,7 +40,7 @@
                         </div>
                         <!-- Slide 2: Global Export Sourcing -->
                         <div class="swiper-slide">
-                            <div class="hero-slide-bg" style="background-image: url(\'{{ asset("images/slider/4.jpg") }}\');">
+                            <div class="hero-slide-bg" style="background-image: url('{{ asset('images/slider/4.jpg') }}');">
                             </div>
                             <div class="hero-overlay"></div>
                             <div class="hero-slide-content">
@@ -68,7 +68,7 @@
 
                         <!-- Slide 3: Garments -->
                         <div class="swiper-slide">
-                            <div class="hero-slide-bg" style="background-image: url(\'{{ asset("images/slider/2.jpg") }}\');">
+                            <div class="hero-slide-bg" style="background-image: url('{{ asset('images/slider/2.jpg') }}');">
                             </div>
                             <div class="hero-overlay"></div>
                             <div class="hero-slide-content">
@@ -194,7 +194,7 @@
             </div>
         </div>
         <!-- service section -->
-        <div class="section service-section" style="background-image: url(\'{{ asset("images/servicebg.png") }}\');">
+        <div class="section service-section" style="background-image: url('{{ asset('images/servicebg.png') }}');">
             <div class="container text-center">
                 <div class="mb-5 pb-lg-3" data-aos="fade-up">
                     <p class="section-label d-inline-block text-uppercase mb-2">Our Core Strength</p>
@@ -216,7 +216,7 @@
                             <div class=" col-md-4" data-aos="fade-up" data-aos-delay="100">
                                 <div class="service-card text-start">
                                     <div class="card-hover-overlay"
-                                        style="background-image: url(\'{{ asset("images/cat7/product1.jpg") }}\');">
+                                        style="background-image: url('{{ asset('images/cat7/product1.jpg') }}');">
                                     </div>
                                     <div class="service-icon">
                                         <i class="ri-t-shirt-fill"></i>
@@ -232,7 +232,7 @@
                             <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                                 <div class="service-card text-start">
                                     <div class="card-hover-overlay"
-                                        style="background-image: url(\'{{ asset("images/cat6/product1.jpg") }}\');">
+                                        style="background-image: url('{{ asset('images/cat6/product1.jpg') }}');">
                                     </div>
                                     <div class="service-icon">
                                         <i class="ri-box-3-fill"></i>
@@ -371,7 +371,7 @@
                     <div class="swiper-wrapper">
                         <!-- Slide 1: Cotton Terry Towels -->
                         <div class="swiper-slide">
-                            <a href="{{ route('listing') }}?category=cat-cotton-terry" class="collection-card">
+                            <a href="{{ route('listing') }}#cat-cotton-terry" class="collection-card">
                                 <div class="card-img-wrapper">
                                     <span class="card-tag">Towel collection</span>
                                     <img src="{{ asset('images/cat1/product1.jpg') }}" alt="Cotton Terry Towels">
@@ -387,7 +387,7 @@
 
                         <!-- Slide 2: Cotton & Polyester Mixed Towels -->
                         <div class="swiper-slide">
-                            <a href="{{ route('listing') }}?category=cat-mixed" class="collection-card">
+                            <a href="{{ route('listing') }}#cat-mixed" class="collection-card">
                                 <div class="card-img-wrapper">
                                     <span class="card-tag">Towel collection</span>
                                     <img src="{{ asset('images/cat2/product1.jpg') }}" alt="Mixed Towels">
@@ -403,7 +403,7 @@
 
                         <!-- Slide 3: Multi-Stripe Towels -->
                         <div class="swiper-slide">
-                            <a href="{{ route('listing') }}?category=cat-stripe" class="collection-card">
+                            <a href="{{ route('listing') }}#cat-stripe" class="collection-card">
                                 <div class="card-img-wrapper">
                                     <span class="card-tag">Towel collection</span>
                                     <img src="{{ asset('images/cat3/product1.jpg') }}" alt="Multi-Stripe Towels">
@@ -419,7 +419,7 @@
 
                         <!-- Slide 4: Kitchen Towels -->
                         <div class="swiper-slide">
-                            <a href="{{ route('listing') }}?category=cat-kitchen" class="collection-card">
+                            <a href="{{ route('listing') }}#cat-kitchen" class="collection-card">
                                 <div class="card-img-wrapper">
                                     <span class="card-tag">Towel collection</span>
                                     <img src="{{ asset('images/cat4/product1.jpg') }}" alt="Kitchen Towels">
@@ -435,7 +435,7 @@
 
                         <!-- Slide 5: Hotel Towels -->
                         <div class="swiper-slide">
-                            <a href="{{ route('listing') }}?category=cat-hotel" class="collection-card">
+                            <a href="{{ route('listing') }}#cat-hotel" class="collection-card">
                                 <div class="card-img-wrapper">
                                     <span class="card-tag">Towel collection</span>
                                     <img src="{{ asset('images/cat5/product1.jpg') }}" alt="Hotel Towels">
@@ -451,7 +451,7 @@
 
                         <!-- Slide 6: Beach Towels -->
                         <div class="swiper-slide">
-                            <a href="{{ route('listing') }}?category=cat-beach" class="collection-card">
+                            <a href="{{ route('listing') }}#cat-beach" class="collection-card">
                                 <div class="card-img-wrapper">
                                     <span class="card-tag">Towel collection</span>
                                     <img src="{{ asset('images/cat6/product1.jpg') }}" alt="Beach Towels">
@@ -467,7 +467,7 @@
 
                         <!-- Slide 7: Garments Collection -->
                         <div class="swiper-slide">
-                            <a href="{{ route('listing') }}?category=cat-garments" class="collection-card">
+                            <a href="{{ route('listing') }}#cat-garments" class="collection-card">
                                 <div class="card-img-wrapper">
                                     <span class="card-tag">Garments Collection</span>
                                     <img src="{{ asset('images/cat7/product1.jpg') }}" alt="Garments Collection">
@@ -488,7 +488,7 @@
         </div>
 
         <!-- signature section -->
-        <div class="section signature-section" style="background-image: url(\'{{ asset("images/home-video.jpg") }}\');">
+        <div class="section signature-section" style="background-image: url('{{ asset('images/home-video.jpg') }}');">
             <div class="container py-lg-5">
                 <div class="row align-items-start py-5">
                     <div class="col-lg-5 mb-5 mb-lg-0 pe-lg-4" data-aos="fade-up">
@@ -892,13 +892,14 @@
                                 <div class="trust-avatar" style="background-color:#9aa5b0;"></div>
                                 <div class="trust-avatar" style="background-color:#5c6e7e;"></div>
                             </div>
-                            <span class="trust-label">Trusted By Importers Worldwide</span>
+
+                            <span class="trust-label">What Our Partners Say About Balaji</span>
                         </div>
                     </div>
                     <!-- Right: Label + Heading -->
                     <div class="col-lg-5 offset-lg-3" data-aos="fade-up" data-aos-delay="100">
                         <p class="section-label mb-2">Testimonial</p>
-                        <h2 class="section-heading mb-0">What Our Partners Say About Balaji</h2>
+                        <h2 class="section-heading mb-0">Trusted By Importers Worldwide</h2>
                     </div>
                 </div>
 
@@ -927,7 +928,7 @@
                                         <div class="author-avatar"></div>
                                         <div class="author-info">
                                             <p class="author-name">Anoop G</p>
-                                            <p class="author-title">Sourcing Lead </p>
+                                            <p class="author-title">Distributor, Ghana </p>
                                         </div>
                                     </div>
                                     <span class="testimonial-quote-icon">
@@ -957,7 +958,7 @@
                                         <div class="author-avatar"></div>
                                         <div class="author-info">
                                             <p class="author-name">Ashraf Patel</p>
-                                            <p class="author-title">Managing Director</p>
+                                            <p class="author-title">Managing Director, East Africa</p>
                                         </div>
                                     </div>
                                     <span class="testimonial-quote-icon">
@@ -985,7 +986,7 @@
                                         <div class="author-avatar"></div>
                                         <div class="author-info">
                                             <p class="author-name">Jayesh Khanchandani</p>
-                                            <p class="author-title">Head of Procurement, JK Wholesale Co.</p>
+                                            <p class="author-title">Head of Procurement, West Africa</p>
                                         </div>
                                     </div>
                                     <span class="testimonial-quote-icon">
@@ -1012,7 +1013,7 @@
                                         <div class="author-avatar"></div>
                                         <div class="author-info">
                                             <p class="author-name"> Ravi Lalwani</p>
-                                            <p class="author-title">Retail Customer</p>
+                                            <p class="author-title">Customer , UAE</p>
                                         </div>
                                     </div>
                                     <span class="testimonial-quote-icon">

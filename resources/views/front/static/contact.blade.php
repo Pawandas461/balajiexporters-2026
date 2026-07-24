@@ -6,9 +6,11 @@
 @endsection
 
 @section('content')
-<!-- ── Page Hero ──────────────────────────────────────── -->
+
+
+        <!-- ── Page Hero ──────────────────────────────────────── -->
         <section class="page-hero contact-page-hero">
-            <div class="page-hero-bg" style="background-image: url('images/banner/3.png');">
+            <div class="page-hero-bg" style="background-image: url('{{ asset('images/banner/3.png') }}');">
             </div>
             <div class="page-hero-overlay"></div>
 
@@ -16,7 +18,7 @@
                 <div class="row">
                     <div class="col-12 hero-content">
                         <div class="page-breadcrumb" data-aos="fade-up">
-                            <a href="index.html">Home</a>
+                            <a href="{{ route('home') }}">Home</a>
                             <span class="sep">/</span>
                             <span class="current">Contact</span>
                         </div>
@@ -65,8 +67,8 @@
                                     </div>
                                 </div>
 
-                                
-                                <div class="contact-info-card d-flex align-items-start gap-3">
+                                <!-- Card: WhatsApp -->
+                                {{-- <div class="contact-info-card d-flex align-items-start gap-3">
                                     <div class="info-card-icon">
                                         <i class="ri-whatsapp-fill text-success" style="font-size: 1.5rem;"></i>
                                     </div>
@@ -75,7 +77,7 @@
                                         <a href="#" id="whatsapp" data-bs-toggle="modal" data-bs-target="#whatsappModal"
                                             class="info-card-link text-decoration-none fw-semibold">+91-9004711558</a>
                                     </div>
-                                </div>
+                                </div> --}}
 
                                 <!-- Card 2: Email -->
                                 <div class="contact-info-card d-flex align-items-start gap-3">
@@ -127,8 +129,8 @@
                                     <div class="col-md-6">
                                         <div class="form-group-custom">
                                             <label for="name" class="form-label-custom">Full Name</label>
-                                            <input type="text" id="name" name="name" class="form-control-custom"
-                                                placeholder="e.g. John Doe" value="{{ old('name') }}" required>
+                                            <input type="text" id="name" class="form-control-custom"
+                                                placeholder="e.g. John Doe" required name="name" value="{{ old('name') }}" required>
                                             @error('name')<small class="text-danger">{{ $message }}</small>@enderror
                                         </div>
                                     </div>
@@ -137,8 +139,8 @@
                                     <div class="col-md-6">
                                         <div class="form-group-custom">
                                             <label for="email" class="form-label-custom">Corporate Email</label>
-                                            <input type="email" id="email" name="email" class="form-control-custom"
-                                                placeholder="e.g. name@company.com" value="{{ old('email') }}" required>
+                                            <input type="email" id="email" class="form-control-custom"
+                                                placeholder="e.g. name@company.com" required name="email" value="{{ old('email') }}" required>
                                             @error('email')<small class="text-danger">{{ $message }}</small>@enderror
                                         </div>
                                     </div>
@@ -147,7 +149,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group-custom">
                                             <label for="phone" class="form-label-custom">Phone Number</label>
-                                            <input type="tel" id="phone" name="phone" class="form-control-custom w-100" value="{{ old('phone') }}" required>
+                                            <input type="tel" id="phone" class="form-control-custom w-100" required name="phone" value="{{ old('phone') }}" required>
                                             @error('phone')<small class="text-danger">{{ $message }}</small>@enderror
                                         </div>
                                     </div>
@@ -156,9 +158,8 @@
                                     <div class="col-md-6">
                                         <div class="form-group-custom">
                                             <label for="country" class="form-label-custom">Country</label>
-                                            <select id="country" name="country" class="form-select-custom" required>
+                                            <select id="country" class="form-select-custom" required>
                                                 <option value="" disabled selected>Select your country</option>
-                                                <!-- Populated dynamically via JS -->
                                             </select>
                                             <input type="hidden" id="old_country" value="{{ old('country') }}">
                                             @error('country')<small class="text-danger">{{ $message }}</small>@enderror
@@ -208,7 +209,7 @@
 
                                                 <div class="col-sm-6">
                                                     <label class="checkbox-card-label">
-                                                        <input type="checkbox" name="categories[]"
+                                                        <input type="checkbox" name="categories[]" name="categories"
                                                             value="Cotton Terry Towels" class="checkbox-card-input">
                                                         <span class="checkbox-card-content">
                                                             <span class="checkbox-card-icon"><i
@@ -220,7 +221,7 @@
 
                                                 <div class="col-sm-6">
                                                     <label class="checkbox-card-label">
-                                                        <input type="checkbox" name="categories[]" value="Mixed Towels"
+                                                        <input type="checkbox" name="categories[]" name="categories" value="Mixed Towels"
                                                             class="checkbox-card-input">
                                                         <span class="checkbox-card-content">
                                                             <span class="checkbox-card-icon"><i
@@ -232,7 +233,7 @@
 
                                                 <div class="col-sm-6">
                                                     <label class="checkbox-card-label">
-                                                        <input type="checkbox" name="categories[]"
+                                                        <input type="checkbox" name="categories[]" name="categories"
                                                             value="Multi-Stripe Towels" class="checkbox-card-input">
                                                         <span class="checkbox-card-content">
                                                             <span class="checkbox-card-icon"><i
@@ -244,7 +245,7 @@
 
                                                 <div class="col-sm-6">
                                                     <label class="checkbox-card-label">
-                                                        <input type="checkbox" name="categories[]" value="Kitchen Towels"
+                                                        <input type="checkbox" name="categories[]" name="categories" value="Kitchen Towels"
                                                             class="checkbox-card-input">
                                                         <span class="checkbox-card-content">
                                                             <span class="checkbox-card-icon"><i
@@ -256,7 +257,7 @@
 
                                                 <div class="col-sm-6">
                                                     <label class="checkbox-card-label">
-                                                        <input type="checkbox" name="categories[]" value="Hotel Towels"
+                                                        <input type="checkbox" name="categories[]" name="categories" value="Hotel Towels"
                                                             class="checkbox-card-input">
                                                         <span class="checkbox-card-content">
                                                             <span class="checkbox-card-icon"><i
@@ -268,7 +269,7 @@
 
                                                 <div class="col-sm-6">
                                                     <label class="checkbox-card-label">
-                                                        <input type="checkbox" name="categories[]" value="Beach Towels"
+                                                        <input type="checkbox" name="categories[]" name="categories" value="Beach Towels"
                                                             class="checkbox-card-input">
                                                         <span class="checkbox-card-content">
                                                             <span class="checkbox-card-icon"><i
@@ -280,7 +281,7 @@
 
                                                 <div class="col-sm-6">
                                                     <label class="checkbox-card-label">
-                                                        <input type="checkbox" name="categories[]" value="Garments"
+                                                        <input type="checkbox" name="categories[]" name="categories" value="Garments"
                                                             class="checkbox-card-input">
                                                         <span class="checkbox-card-content">
                                                             <span class="checkbox-card-icon"><i
@@ -291,7 +292,7 @@
                                                 </div>
                                                 <div class="col-sm-6">
                                                     <label class="checkbox-card-label">
-                                                        <input type="checkbox" name="categories[]" value="All Products"
+                                                        <input type="checkbox" name="categories[]" name="categories" value="All Products"
                                                             class="checkbox-card-input">
                                                         <span class="checkbox-card-content">
                                                             <span class="checkbox-card-icon"><i
@@ -317,6 +318,7 @@
                                         </div>
                                     </div>
 
+                                    <!-- Submit Button -->
                                     
                                     <input type="hidden" name="source" value="contact_page">
                                     <!-- Google ReCaptcha -->
@@ -326,9 +328,7 @@
                                             @error('g-recaptcha-response')<small class="text-danger">{{ $message }}</small>@enderror
                                         </div>
                                     </div>
-
-                                    <!-- Submit Button -->
-                                    <div class="col-12 mt-4 text-center">
+<div class="col-12 mt-4 text-center">
                                         <button type="submit" class="btn-accent px-5 py-2.5 mb-3"
                                             style="font-size: 0.95rem;">Send Export Enquiry</button>
                                         <div>
@@ -355,14 +355,11 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.4/build/js/intlTelInput.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
-<!-- Page Specific Script for intl-tel-input and Country populator -->
     <script>
-        // DOM Init
         document.addEventListener('DOMContentLoaded', () => {
             const phoneInputEl = document.querySelector("#phone");
             const countrySelectEl = document.querySelector("#country");
 
-            // Initialize intl-tel-input
             let iti = null;
             let choicesInstance = null;
             if (phoneInputEl) {
@@ -372,14 +369,12 @@
                         fetch("https://ipapi.co/json")
                             .then(res => res.json())
                             .then(data => callback(data.country_code))
-                            .catch(() => callback("in")); // Fallback to India
+                            .catch(() => callback("in"));
                     },
                     utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.4/build/js/utils.js"
                 });
             }
 
-            // Populate Country Selector Dropdown
-            // Fetch list of countries from public REST Countries API or local list
             const countryList = @json($countries->map(fn($c) => ['name' => ucwords(strtolower($c->country)), 'code' => $c->iso])->values()->all());
 
             if (countrySelectEl) {
@@ -390,7 +385,6 @@
                     countrySelectEl.appendChild(opt);
                 });
 
-                // Initialize Choices.js searchable dropdown
                 choicesInstance = new Choices(countrySelectEl, {
                     searchEnabled: true,
                     itemSelectText: '',
@@ -400,7 +394,6 @@
                 });
             }
 
-            // Sync phone flag with country selector when country changes
             countrySelectEl?.addEventListener('change', (e) => {
                 const selectedCountryName = e.target.value;
                 const match = countryList.find(c => c.name === selectedCountryName);
@@ -409,7 +402,6 @@
                 }
             });
 
-            // Sync country selector with phone flag when flag changes
             phoneInputEl?.addEventListener('countrychange', () => {
                 if (iti && choicesInstance) {
                     const countryData = iti.getSelectedCountryData();
@@ -422,10 +414,8 @@
                 }
             });
 
-            // Form Submit validation
             const form = document.getElementById("exportContactForm");
             form?.addEventListener('submit', (e) => {
-                // Get categories checked
                 const checkedCats = [];
                 document.querySelectorAll('input[name="categories[]"]:checked').forEach(cb => {
                     checkedCats.push(cb.value);
@@ -448,6 +438,4 @@
             }
         });
     </script>
-
-    
 @endsection

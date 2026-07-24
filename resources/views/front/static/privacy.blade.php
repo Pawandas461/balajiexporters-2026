@@ -1,6 +1,8 @@
 @extends('layouts.front')
+
 @section('css')
-    <style>
+<style>
+
         /* ── Privacy Page Specific Styles ─────────────────────── */
         .privacy-hero {
             background: linear-gradient(135deg, var(--primary-color, #06192C) 0%, #0d2d4d 60%, #06192C 100%);
@@ -286,10 +288,12 @@
                 margin-bottom: 32px;
             }
         }
-    </style>
+    
+</style>
 @endsection
+
 @section('content')
-    <main>
+
 
         <!-- ── Hero ────────────────────────────────────────────── -->
         <section class="page-hero justify-content-center">
@@ -650,6 +654,5 @@
             </div>
         </section>
 
-    </main>
-
+    
 @endsection
