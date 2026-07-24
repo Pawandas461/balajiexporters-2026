@@ -1,0 +1,482 @@
+@extends('layouts.front')
+@section('content')
+
+
+        <!-- ══════════════════════════════════════════════════════
+             SECTION 1 — Page Hero
+        ══════════════════════════════════════════════════════ -->
+        <section class="page-hero">
+
+            <div class="page-hero-bg" style="background-image: url(\'{{ asset("images/banner/1.png") }}\');">
+            </div>
+            <div class="page-hero-overlay"></div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 hero-content">
+
+                        <!-- Breadcrumb -->
+                        <div class="page-breadcrumb" data-aos="fade-up">
+                            <a href="{{ route('home') }}">Home</a>
+                            <span class="sep">/</span>
+                            <span class="current">About</span>
+                        </div>
+
+                        <!-- H1 -->
+                        <h1 class="page-hero-title" data-aos="fade-up" data-aos-delay="80">
+                            25+ Years of Sourcing<br>Excellence from India
+                        </h1>
+
+                        <!-- Button + Subtitle side by side -->
+                        <div class="hero-bottom-row" data-aos="fade-up" data-aos-delay="180">
+                            <a href="{{ route(\'listing\') }}" class="btn-accent flex-shrink-0">Explore Products</a>
+                            <p class="page-hero-subtitle">
+                                Helping Importers Source Premium Towels And Garments Through Trusted Indian
+                                Manufacturers With Complete Sourcing, Quality Inspection, And Logistics Support.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ══════════════════════════════════════════════════════
+             SECTION 2 — About Brand + Stats Cards
+        ══════════════════════════════════════════════════════ -->
+        <div class="section about-section" id="about-brand">
+            <div class="container">
+
+                <!-- Top row: label + heading left, body + CTA right -->
+                <div class="row align-items-start mb-5 pb-lg-3">
+
+                    <!-- Left col: label, heading, image -->
+                    <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-up">
+                        <p class="section-label">Our Brand</p>
+                        <h2 class="section-heading mb-4">About Balaji Garments</h2>
+                        <p class="section-body lh-base mb-5">
+                            For More Than Two Decades, We Have Helped Importers Source Premium Towels And
+                            Garments From India's Most Reliable manufacturer sourcing Partners. Our Experienced Team
+                            Manages Every Stage — From Factory Selection And Quality Inspections To
+                            Documentation And Shipping — Ensuring A Smooth, Transparent, And Dependable
+                            Export Experience.
+                        </p>
+                        <a href="{{ route('contact') }}" class="btn-accent">Contact Us</a>
+                    </div>
+
+                    <!-- Right col: image -->
+                    <div class="col-lg-5 offset-lg-1" data-aos="fade-up" data-aos-delay="150">
+                        <img src="{{ asset(\'images/about1.jpg\') }}" alt="Balaji Garments manufacturer sourcing unit"
+                            class="img-fluid rounded-3 w-100" style="object-fit: cover; height: 400px;">
+                    </div>
+
+                </div>
+
+                <!-- Stats row — reuses existing .stats-row / .stat-card from _about.scss -->
+                <div class="row g-0 stats-row mt-lg-3" data-aos="fade-up" data-aos-delay="100">
+
+                    <!-- Stat 1 -->
+                    <div class="col-6 col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="ri-ship-fill"></i></div>
+                            <div class="pb-3">
+                                <p class="stat-label">Successful Shipments</p>
+                                <p class="stat-number">
+                                    <span class="counter" data-target="500">0</span><span class="stat-suffix">+</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stat 2 -->
+                    <div class="col-6 col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="ri-user-star-fill"></i></div>
+                            <div class="pb-3">
+                                <p class="stat-label">Years in Business</p>
+                                <p class="stat-number">
+                                    <span class="counter" data-target="25">0</span><span class="stat-suffix">+</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stat 3 -->
+                    <div class="col-6 col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="ri-map-pin-2-fill"></i></div>
+                            <div class="pb-3">
+                                <p class="stat-label">Export Destinations</p>
+                                <p class="stat-number">
+                                    <span class="counter" data-target="25">0</span><span class="stat-suffix">+</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stat 4 -->
+                    <div class="col-6 col-md-3">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="ri-award-fill"></i></div>
+                            <div class="pb-3">
+                                <p class="stat-label">No. Of Verified Manufacturers</p>
+                                <p class="stat-number">
+                                    <span class="counter" data-target="100">0</span><span class="stat-suffix">+</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /stats-row -->
+
+            </div>
+        </div>
+        <!-- misson-vison -->
+        <div class="section service-section" style="background-image: url(\'{{ asset("images/servicebg.png") }}\');">
+            <div class="container text-center">
+                <div class="mb-5 pb-lg-3" data-aos="fade-up">
+                    <p class="section-label d-inline-block text-uppercase mb-2">Our Purpose</p>
+                    <h2 class="section-heading mb-0">Driving Global Export <br>Excellence</h2>
+                </div>
+
+                <div class="row  justify-content-center">
+                    <div class="col-lg-10">
+                        <!-- Hover Hint -->
+                        <div class="hover-hint-wrap">
+                            <div class="hover-hint" id="serviceHoverHint">
+                                <span class="hint-cursor">🖱️</span>
+                                Hover cards to explore
+                                <span class="hint-dot"></span>
+                            </div>
+                        </div>
+                        <div class="row g-4">
+                            <!-- Card 1 -->
+                            <div class=" col-md-6" data-aos="fade-up" data-aos-delay="100">
+                                <div class="service-card text-start">
+                                    <div class="card-hover-overlay"
+                                        style="background-image: url(\'{{ asset("images/vision_mission/vision.jpg") }}\');">
+                                    </div>
+                                    <div class="service-icon">
+                                        <i class="ri-target-fill"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="service-title">Our Vision</h3>
+                                        <p class="service-desc">To become the most trusted sourcing and export partner
+                                            connecting global buyers with India's finest manufacturers.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 2 -->
+                            <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                                <div class="service-card text-start">
+                                    <div class="card-hover-overlay"
+                                        style="background-image: url(\'{{ asset("images/vision_mission/mission.png") }}\');">
+                                    </div>
+                                    <div class="service-icon">
+                                        <i class="ri-shake-hands-fill"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="service-title">Our Mission</h3>
+                                        <p class="service-desc">Deliver consistent quality, reliable sourcing,
+                                            transparent communication, and seamless export solutions that build
+                                            long-term partnerships.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════════
+             SECTION 3 — Our Strengths
+        ══════════════════════════════════════════════════════ -->
+        <div class="section about-strengths-section">
+            <div class="container">
+
+                <!-- ROW 1: Heading left | Description + CTA right -->
+                <div class="row g-4 mb-5 align-items-end">
+                    <div class="col-lg-6" data-aos="fade-up">
+                        <p class="section-label">Our Strengths</p>
+                        <h2 class="section-heading mb-0">Delivering Value Beyond Products</h2>
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                        <p class="section-body lh-base mb-4">
+                            Building Trusted Partnerships Through Quality Sourcing, Reliable manufacturer sourcing,
+                            And Seamless Export Solutions.
+                        </p>
+                        <a href="{{ route('contact') }}" class="btn-accent">Enquire Now</a>
+                    </div>
+                </div>
+
+                <!-- ROW 2: Image left | Strengths list right -->
+                <div class="row g-lg-5  pt-lg-4 align-items-stretch">
+                    <div class="col-lg-6 d-flex" data-aos="fade-up">
+                        <img src="{{ asset(\'images/about2.jpg\') }}" alt="manufacturer sourcing facility"
+                            class="img-fluid rounded-3 w-100" style="object-fit: cover; min-height: 360px;">
+                    </div>
+
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="120">
+                        <div class="strengths-list">
+
+                            <div class="strength-item pt-lg-0" data-aos="fade-up" data-aos-delay="100">
+                                <div class="strength-icon"><i class="ri-shield-check-fill"></i></div>
+                                <div>
+                                    <h3 class="strength-title">Verified Manufacturers</h3>
+                                    <p class="strength-desc">Partnering With Trusted Factories Across India For Reliable
+                                        And Consistent Production.</p>
+                                </div>
+                            </div>
+
+                            <div class="strength-item" data-aos="fade-up" data-aos-delay="150">
+                                <div class="strength-icon"><i class="ri-award-fill"></i></div>
+                                <div>
+                                    <h3 class="strength-title">Quality Assurance</h3>
+                                    <p class="strength-desc">Strict Inspections And Quality Checks Ensure Every Shipment
+                                        Meets Global Standards.</p>
+                                </div>
+                            </div>
+
+                            <div class="strength-item" data-aos="fade-up" data-aos-delay="200">
+                                <div class="strength-icon"><i class="ri-truck-fill"></i></div>
+                                <div>
+                                    <h3 class="strength-title">Export Expertise</h3>
+                                    <p class="strength-desc">Complete Sourcing, Documentation, And Logistics Managed
+                                        Under One Trusted Partner.</p>
+                                </div>
+                            </div>
+
+                            <div class="strength-item no-border" data-aos="fade-up" data-aos-delay="250">
+                                <div class="strength-icon"><i class="ri-user-star-fill"></i></div>
+                                <div>
+                                    <h3 class="strength-title">Buyer-Focused Approach</h3>
+                                    <p class="strength-desc">Customized Sourcing Solutions Tailored To Every Buyer's
+                                        Requirements.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════════
+             SECTION 4 — Our Signature (full-bleed banner)
+        ══════════════════════════════════════════════════════ -->
+        <section class="about-signature-section">
+            <div class="sig-bg" style="background-image: url(\'{{ asset("images/about3.jpg") }}\');"></div>
+            <div class="sig-overlay"></div>
+
+            <div class="container sig-content text-center" data-aos="fade-up">
+                <p class="section-label-pill">Our Signature</p>
+                <h2 class="sig-heading">Building Long-Term<br>Relationships Through Trust</h2>
+                <p class="sig-subtitle mb-3">Principles That Drive Every Partnership</p>
+                <p class="sig-subtitle fs-5 mb-5">Win Win Win Philosophy</p>
+                <a href="{{ route('contact') }}" class="btn-accent mb-5">Contact Our Team</a>
+
+                <div class="sig-values-row">
+                    <div class="sig-value"><i class="ri-check-line"></i> Quality</div>
+                    <div class="sig-value"><i class="ri-check-line"></i> Integrity</div>
+                    <div class="sig-value"><i class="ri-check-line"></i> Reliability</div>
+                    <div class="sig-value"><i class="ri-check-line"></i> Commitment</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════
+             SECTION 5 — Certified Excellence
+        ══════════════════════════════════════════════════════ -->
+        <div class="section cert-section">
+            <div class="container">
+
+                <!-- Heading row — centered -->
+                <div class="text-center mb-5 pb-lg-2" data-aos="fade-up">
+                    <p class="section-label">Certified Excellence</p>
+                    <h2 class="section-heading mt-2">Tested, Proven &amp; Trusted Solutions</h2>
+                </div>
+
+                <!-- Certificate cards row — 1 real cert centered -->
+                <div class="row g-4 justify-content-center">
+
+                    <!-- Real Certificate -->
+                    <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
+                        <div class="cert-card">
+                            <div class="cert-img-wrap">
+                                <img src="{{ asset(\'images/certificate/1.jpg\') }}" alt="Quality Certificate"
+                                    class="img-fluid rounded-3 w-100">
+                            </div>
+                            <div class="cert-info">
+                                <p class="cert-name">
+                                    <span class="cert-dot"></span>
+                                    ISO 9001
+                                </p>
+                                <p class="cert-desc">Quality Management</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /row -->
+
+            </div>
+        </div>
+        <!-- testimonial section -->
+        <div class="section testimonials-section">
+            <div class="container">
+                <!-- Header Row -->
+                <div class="row align-items-center mb-5 pb-lg-3">
+                    <!-- Left: Stat -->
+                    <div class="col-lg-4 mb-4 mb-lg-0 testimonials-stat" data-aos="fade-up">
+                        <p class="stat-big-number">250K<span class="stat-plus">+</span></p>
+                        <div class="stat-trust-row">
+                            <div class="trust-avatars">
+                                <div class="trust-avatar" style="background-color:#9aa5b0;"></div>
+                                <div class="trust-avatar" style="background-color:#5c6e7e;"></div>
+                            </div>
+                            <span class="trust-label">Trusted By Importers Worldwide</span>
+                        </div>
+                    </div>
+                    <!-- Right: Label + Heading -->
+                    <div class="col-lg-5 offset-lg-3" data-aos="fade-up" data-aos-delay="100">
+                        <p class="section-label mb-2">Testimonial</p>
+                        <h2 class="section-heading mb-0">What Our Partners Say About Balaji</h2>
+                    </div>
+                </div>
+
+                <!-- Swiper Cards -->
+                <div class="testimonials-swiper-wrapper">
+                    <div class="swiper testimonial-swiper">
+                        <div class="swiper-wrapper">
+
+                            <!-- Card 1 -->
+                            <div class="swiper-slide">
+                                <div class="testimonial-card">
+                                    <div>
+                                        <div class="testimonial-stars">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                        </div>
+                                        <p class="testimonial-quote">“We've been sourcing towels from Balaji Garments
+                                            and are thoroughly impressed with their quality. Each shipment reflects
+                                            their commitment to quality assurance and reliable service. A trustworthy
+                                            export partner”</p>
+                                    </div>
+                                    <div class="testimonial-author">
+                                        <div class="author-avatar"></div>
+                                        <div class="author-info">
+                                            <p class="author-name">Anoop G</p>
+                                            <p class="author-title">Sourcing Lead </p>
+                                        </div>
+                                    </div>
+                                    <span class="testimonial-quote-icon">
+                                        <img src="{{ asset(\'images/quote.png\') }}" alt="" class="img-fluid">
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Card 2 -->
+                            <div class="swiper-slide">
+                                <div class="testimonial-card">
+                                    <div>
+                                        <div class="testimonial-stars">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                        </div>
+                                        <p class="testimonial-quote">“As a loyal customer of Balaji Garments, I rely on
+                                            them for all my export needs. Their extensive range of high-quality products
+                                            consistently meets my standards, and their meticulous inspection process
+                                            guarantees that everything is perfect before shipment. I'm always confident
+                                            in their dedication to excellence and customer satisfaction.”</p>
+                                    </div>
+                                    <div class="testimonial-author">
+                                        <div class="author-avatar"></div>
+                                        <div class="author-info">
+                                            <p class="author-name">Ashraf Patel</p>
+                                            <p class="author-title">Managing Director</p>
+                                        </div>
+                                    </div>
+                                    <span class="testimonial-quote-icon">
+                                        <img src="{{ asset(\'images/quote.png\') }}" alt="" class="img-fluid">
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Card 3 -->
+                            <div class="swiper-slide">
+                                <div class="testimonial-card">
+                                    <div>
+                                        <div class="testimonial-stars">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-half-fill"></i>
+                                        </div>
+                                        <p class="testimonial-quote">“We've been working with Balaji Garments for our
+                                            towels and undergarments, and their consistency in quality and service is
+                                            impressive. Definitely a reliable partner for exports.”</p>
+                                    </div>
+                                    <div class="testimonial-author">
+                                        <div class="author-avatar"></div>
+                                        <div class="author-info">
+                                            <p class="author-name">Jayesh Khanchandani</p>
+                                            <p class="author-title">Head of Procurement, JK Wholesale Co.</p>
+                                        </div>
+                                    </div>
+                                    <span class="testimonial-quote-icon">
+                                        <img src="{{ asset(\'images/quote.png\') }}" alt="" class="img-fluid">
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Card 4 -->
+                            <div class="swiper-slide">
+                                <div class="testimonial-card">
+                                    <div>
+                                        <div class="testimonial-stars">
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                            <i class="ri-star-fill"></i>
+                                        </div>
+                                        <p class="testimonial-quote">“Very good and on time services, can trust on
+                                            export shipments”</p>
+                                    </div>
+                                    <div class="testimonial-author">
+                                        <div class="author-avatar"></div>
+                                        <div class="author-info">
+                                            <p class="author-name"> Ravi Lalwani</p>
+                                            <p class="author-title">Retail Customer</p>
+                                        </div>
+                                    </div>
+                                    <span class="testimonial-quote-icon">
+                                        <img src="{{ asset(\'images/quote.png\') }}" alt="" class="img-fluid">
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+@endsection
