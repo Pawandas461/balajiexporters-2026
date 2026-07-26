@@ -213,7 +213,7 @@
                 @yield('content')
                 <div class="navbar navbar-sm navbar-footer border-top">
                     <div class="container-fluid">
-                        <span>&copy; {{now()->year}} Copyright | {{env('APP_NAME')}}</span> <a href="https://www.webmaddy.com" target="_blank">Developed by Webmaddy Pvt Ltd</a>
+                        <span>&copy; {{now()->year}} Copyright | {{env('APP_NAME')}}</span> 
                     </div>
                 </div>
             </div>

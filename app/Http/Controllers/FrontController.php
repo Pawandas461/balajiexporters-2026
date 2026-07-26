@@ -7,6 +7,7 @@ use App\Models\Country;
 use App\Mail\EnquiryConfirmationMail;
 use App\Mail\EnquiryNotificationMail;
 use App\Models\Enquiry;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
@@ -56,7 +57,7 @@ class FrontController extends Controller
             'categories' => 'required|array',
             'order_quantity' => 'nullable|string|max:100',
             'message' => 'required|string|max:500',
-            'g-recaptcha-response' => 'required',
+            // 'g-recaptcha-response' => 'required',
             'source' => 'nullable|max:30|string'
         ]);
 
@@ -93,12 +94,23 @@ class FrontController extends Controller
                 'source' => $req->source,
             ]);
 
-            // Mail to Admin
-            Mail::to(env('NOTIFICATION_EMAIL'))
-                ->queue(new EnquiryNotificationMail($enquiry));
+            // Mail to Admin and send confirmation to user
+            try {
+                Mail::to(env('NOTIFICATION_EMAIL'))
+                    ->queue(new EnquiryNotificationMail($enquiry));
 
-            Mail::to($enquiry->email)
-                ->queue(new EnquiryConfirmationMail($enquiry));
+                Mail::to($enquiry->email)
+                    ->queue(new EnquiryConfirmationMail($enquiry));
+            } catch (\Throwable $e) {
+                Log::error('Enquiry notification mail failed', [
+                    'enquiry_id' => $enquiry->id,
+                    'error' => $e->getMessage(),
+                ]);
+
+                return redirect()
+                    ->back()
+                    ->with('warning', 'Your enquiry has been submitted, but we were unable to send email notifications.');
+            }
 
             return redirect()
                 ->back()
