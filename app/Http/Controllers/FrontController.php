@@ -62,7 +62,7 @@ class FrontController extends Controller
         ]);
 
         $recaptchaResponse = $req->input('g-recaptcha-response');
-        $recaptchaSecret = env('RECAPTCHA_SECRET_KEY');
+        $recaptchaSecret = config('services.recaptcha.secret_key');
 
         if (!empty($recaptchaResponse) && !empty($recaptchaSecret)) {
             $response = Http::asForm()->post(
@@ -104,7 +104,7 @@ class FrontController extends Controller
 
             // Mail to Admin and send confirmation to user
             try {
-                Mail::to(env('NOTIFICATION_EMAIL'))
+                Mail::to(config('services.notification_email'))
                     ->queue(new EnquiryNotificationMail($enquiry));
 
                 Mail::to($enquiry->email)
