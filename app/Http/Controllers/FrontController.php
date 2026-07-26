@@ -104,11 +104,25 @@ class FrontController extends Controller
 
             // Mail to Admin and send confirmation to user
             try {
-                Mail::to(config('services.notification_email'))
-                    ->queue(new EnquiryNotificationMail($enquiry));
+                $adminEmail = config('services.mail.notification_email') ?: env('NOTIFICATION_EMAIL');
 
-                Mail::to($enquiry->email)
-                    ->queue(new EnquiryConfirmationMail($enquiry));
+                if (!empty($adminEmail)) {
+                    Mail::to($adminEmail)
+                        ->queue(new EnquiryNotificationMail($enquiry));
+                } else {
+                    Log::warning('Enquiry admin email not configured', [
+                        'enquiry_id' => $enquiry->id,
+                    ]);
+                }
+
+                if (!empty($enquiry->email)) {
+                    Mail::to($enquiry->email)
+                        ->queue(new EnquiryConfirmationMail($enquiry));
+                } else {
+                    Log::warning('Enquiry user email missing', [
+                        'enquiry_id' => $enquiry->id,
+                    ]);
+                }
             } catch (\Throwable $e) {
                 Log::error('Enquiry notification mail failed', [
                     'enquiry_id' => $enquiry->id,

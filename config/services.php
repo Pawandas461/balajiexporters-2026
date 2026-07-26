@@ -47,7 +47,7 @@ return [
         'secret_key' => env('RECAPTCHA_SECRET_KEY'),
     ],
     'mail' => [
-    'notification_email' => env('NOTIFICATION_EMAIL'),
-],
+        'notification_email' => env('NOTIFICATION_EMAIL'),
+    ],
 
 ];
