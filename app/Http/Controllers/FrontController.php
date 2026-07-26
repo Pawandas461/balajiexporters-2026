@@ -50,7 +50,7 @@ class FrontController extends Controller
             'name' => ['required', 'regex:/^[A-Za-z ]{3,150}$/'],
             'location' => 'nullable|string|max:200',
             'country' => 'required|string',
-            'phone' => ['required', 'string', 'min:7', 'max:20'],
+            'phone' => ['required', 'string', 'regex:/^\+?[0-9]{7,15}$/'],
             'email' => 'required|string|email|max:100',
             'subject' => 'nullable|string|max:200',
             'business_type' => 'required|string|max:100',

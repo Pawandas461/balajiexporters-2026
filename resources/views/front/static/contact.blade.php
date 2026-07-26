@@ -445,6 +445,13 @@
                     alert("Please select at least one product category of interest.");
                     return;
                 }
+
+                if (iti && phoneInputEl) {
+                    const fullNumber = iti.getNumber();
+                    if (fullNumber) {
+                        phoneInputEl.value = fullNumber;
+                    }
+                }
             });
 
             const oldCountry = document.getElementById('old_country')?.value;
