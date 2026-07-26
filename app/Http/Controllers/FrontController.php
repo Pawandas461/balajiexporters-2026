@@ -61,18 +61,26 @@ class FrontController extends Controller
             'source' => 'nullable|max:30|string'
         ]);
 
-        $response = Http::asForm()->post(
-            'https://www.google.com/recaptcha/api/siteverify',
-            [
-                'secret' => env('RECAPTCHA_SECRET_KEY'),
-                'response' => $req->{'g-recaptcha-response'},
-                'remoteip' => $req->ip(),
-            ]
-        );
+        $recaptchaResponse = $req->input('g-recaptcha-response');
+        $recaptchaSecret = env('RECAPTCHA_SECRET_KEY');
 
-        $result = $response->json();
+        if (!empty($recaptchaResponse) && !empty($recaptchaSecret)) {
+            $response = Http::asForm()->post(
+                'https://www.google.com/recaptcha/api/siteverify',
+                [
+                    'secret' => $recaptchaSecret,
+                    'response' => $recaptchaResponse,
+                    'remoteip' => $req->ip(),
+                ]
+            );
 
-        if (!($result['success'] ?? false)) {
+            $result = $response->json();
+            $recaptchaPassed = ($result['success'] ?? false);
+        } else {
+            $recaptchaPassed = true;
+        }
+
+        if (!$recaptchaPassed) {
             return back()
                 ->withErrors([
                     'g-recaptcha-response' => 'reCAPTCHA verification failed.'
@@ -109,6 +117,7 @@ class FrontController extends Controller
 
                 return redirect()
                     ->back()
+                    ->withInput()
                     ->with('warning', 'Your enquiry has been submitted, but we were unable to send email notifications.');
             }
 

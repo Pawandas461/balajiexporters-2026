@@ -111,6 +111,22 @@
                                     <div class="alert alert-success">{{ session('success') }}</div>
                                 </div>
                             @endif
+                            @if (session('warning'))
+                                <div class="col-12">
+                                    <div class="alert alert-warning">{{ session('warning') }}</div>
+                                </div>
+                            @endif
+                            @if ($errors->any())
+                                <div class="col-12">
+                                    <div class="alert alert-danger">
+                                        <ul class="mb-0">
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
+                            @endif
                             <div class="row g-4">
 
                                 <!-- Name Field -->
@@ -210,7 +226,7 @@
 
                                             <div class="col-sm-6">
                                                 <label class="checkbox-card-label">
-                                                    <input type="checkbox" name="categories[]" name="categories"
+                                                    <input type="checkbox" name="categories[]"
                                                         value="Cotton Terry Towels" class="checkbox-card-input">
                                                     <span class="checkbox-card-content">
                                                         <span class="checkbox-card-icon"><i
@@ -222,8 +238,8 @@
 
                                             <div class="col-sm-6">
                                                 <label class="checkbox-card-label">
-                                                    <input type="checkbox" name="categories[]" name="categories"
-                                                        value="Mixed Towels" class="checkbox-card-input">
+                                                    <input type="checkbox" name="categories[]" value="Mixed Towels"
+                                                        class="checkbox-card-input">
                                                     <span class="checkbox-card-content">
                                                         <span class="checkbox-card-icon"><i
                                                                 class="ri-check-line"></i></span>
@@ -234,7 +250,7 @@
 
                                             <div class="col-sm-6">
                                                 <label class="checkbox-card-label">
-                                                    <input type="checkbox" name="categories[]" name="categories"
+                                                    <input type="checkbox" name="categories[]"
                                                         value="Multi-Stripe Towels" class="checkbox-card-input">
                                                     <span class="checkbox-card-content">
                                                         <span class="checkbox-card-icon"><i
@@ -246,8 +262,8 @@
 
                                             <div class="col-sm-6">
                                                 <label class="checkbox-card-label">
-                                                    <input type="checkbox" name="categories[]" name="categories"
-                                                        value="Kitchen Towels" class="checkbox-card-input">
+                                                    <input type="checkbox" name="categories[]" value="Kitchen Towels"
+                                                        class="checkbox-card-input">
                                                     <span class="checkbox-card-content">
                                                         <span class="checkbox-card-icon"><i
                                                                 class="ri-check-line"></i></span>
@@ -258,8 +274,8 @@
 
                                             <div class="col-sm-6">
                                                 <label class="checkbox-card-label">
-                                                    <input type="checkbox" name="categories[]" name="categories"
-                                                        value="Hotel Towels" class="checkbox-card-input">
+                                                    <input type="checkbox" name="categories[]" value="Hotel Towels"
+                                                        class="checkbox-card-input">
                                                     <span class="checkbox-card-content">
                                                         <span class="checkbox-card-icon"><i
                                                                 class="ri-check-line"></i></span>
@@ -270,8 +286,8 @@
 
                                             <div class="col-sm-6">
                                                 <label class="checkbox-card-label">
-                                                    <input type="checkbox" name="categories[]" name="categories"
-                                                        value="Beach Towels" class="checkbox-card-input">
+                                                    <input type="checkbox" name="categories[]" value="Beach Towels"
+                                                        class="checkbox-card-input">
                                                     <span class="checkbox-card-content">
                                                         <span class="checkbox-card-icon"><i
                                                                 class="ri-check-line"></i></span>
@@ -282,8 +298,8 @@
 
                                             <div class="col-sm-6">
                                                 <label class="checkbox-card-label">
-                                                    <input type="checkbox" name="categories[]" name="categories"
-                                                        value="Garments" class="checkbox-card-input">
+                                                    <input type="checkbox" name="categories[]" value="Garments"
+                                                        class="checkbox-card-input">
                                                     <span class="checkbox-card-content">
                                                         <span class="checkbox-card-icon"><i
                                                                 class="ri-check-line"></i></span>
@@ -293,8 +309,8 @@
                                             </div>
                                             <div class="col-sm-6">
                                                 <label class="checkbox-card-label">
-                                                    <input type="checkbox" name="categories[]" name="categories"
-                                                        value="All Products" class="checkbox-card-input">
+                                                    <input type="checkbox" name="categories[]" value="All Products"
+                                                        class="checkbox-card-input">
                                                     <span class="checkbox-card-content">
                                                         <span class="checkbox-card-icon"><i
                                                                 class="ri-check-line"></i></span>
@@ -324,14 +340,14 @@
 
                                 <input type="hidden" name="source" value="contact_page">
                                 <!-- Google ReCaptcha -->
-                                {{-- <div class="col-12">
+                                <div class="col-12">
                                     <div class="mb-3">
                                         <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
                                         @error('g-recaptcha-response')
                                             <small class="text-danger">{{ $message }}</small>
                                         @enderror
                                     </div>
-                                </div> --}}
+                                </div>
                                 <div class="col-12 mt-4 text-center">
                                     <button type="submit" class="btn-accent px-5 py-2.5 mb-3"
                                         style="font-size: 0.95rem;">Send Export Enquiry</button>
