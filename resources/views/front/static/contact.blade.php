@@ -342,9 +342,6 @@
                                 <!-- Google ReCaptcha -->
                                 <div class="col-12">
                                     <div class="mb-3">
-                                        {{ config('services.recaptcha.site_key') }}
-                                        {{ env('APP_NAME') }}
-                                        {{ env('MAIL_USERNAME') }}
                                         <div class="g-recaptcha" data-sitekey="{{ config('services.recaptcha.site_key') }}"></div>
                                         @error('g-recaptcha-response')
                                             <small class="text-danger">{{ $message }}</small>
