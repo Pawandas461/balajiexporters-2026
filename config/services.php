@@ -49,5 +49,8 @@ return [
     'mail' => [
         'notification_email' => env('NOTIFICATION_EMAIL'),
     ],
+    'brevo' => [
+        'api_key' => env('BREVO_API_KEY'),
+    ],
 
 ];

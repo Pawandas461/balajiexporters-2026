@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\Transport\BrevoApiTransport;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -11,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        
+
     }
 
     /**
@@ -22,6 +24,10 @@ class AppServiceProvider extends ServiceProvider
         View::composer('layouts.admin', function ($view) {
             $notificationCount = auth()->user() ? auth()->user()->unreadNotifications()->count() : 0;
             $view->with('notificationCount', $notificationCount);
+        });
+
+        Mail::extend('brevo-api', function () {
+            return new BrevoApiTransport(config('services.brevo.api_key'));
         });
     }
 }
