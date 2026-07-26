@@ -66,8 +66,8 @@
                         <tr>
                             <th>Created At</th>
                             <th>Name / Country</th>
-                            <th>Email</th>
-                            <th>Phone</th>
+                            <th>Contact</th>
+                            <th>Message</th>
                             <th>Order Quantity</th>
                             <th>Contacted At</th>
                             <th>Business Type / Categories</th>
@@ -84,8 +84,11 @@
                                     <b><a href="{{ route('enquiries.show', $cat->id) }}">{{ $cat->name }}<br>
                                             <small class="text-muted">{{ $cat->country }}</small></a></b>
                                 </td>
-                                <td>{{ $cat->email }}</td>
-                                <td>{{ $cat->phone }}</td>
+                                <td>
+                                    <div>{{ $cat->phone }}</div>
+                                    <div class="text-muted">{{ $cat->email }}</div>
+                                </td>
+                                <td>{{ Str::limit($cat->message, 25) }}</td>
                                 <td>{{ $cat->order_quantity ?? 'N/A' }}</td>
                                 <td>
                                     @if ($cat->is_contacted)
@@ -110,8 +113,9 @@
                                 </td>
                                 <td class="text-end">
                                     <div class="d-inline-flex">
-                                        <a href="{{ route('enquiries.show', $cat->id) }}" class="text-body"> <i
-                                                class="ph ph-pencil" title="Show Message"></i> </a>
+                                        <a href="{{ route('enquiries.show', $cat->id) }}" class="text-body">
+                                            <i class="ph ph-eye" title="Show Message"></i>
+                                        </a>
                                     </div>
                                 </td>
                             </tr>
