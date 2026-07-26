@@ -342,6 +342,7 @@
                                 <!-- Google ReCaptcha -->
                                 <div class="col-12">
                                     <div class="mb-3">
+                                        {{ env('RECAPTCHA_SITE_KEY') }}
                                         <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
                                         @error('g-recaptcha-response')
                                             <small class="text-danger">{{ $message }}</small>
