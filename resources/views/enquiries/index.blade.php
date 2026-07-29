@@ -116,6 +116,15 @@
                                         <a href="{{ route('enquiries.show', $cat->id) }}" class="text-body">
                                             <i class="ph ph-eye" title="Show Message"></i>
                                         </a>
+                                        <form action="{{ route('enquiries.destroy', $cat->id) }}" method="POST"
+                                            class="ms-2"
+                                            onsubmit="return confirm('Are you sure you want to permanently delete this enquiry?');">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-link p-0 text-danger" title="Delete">
+                                                <i class="ph ph-trash"></i>
+                                            </button>
+                                        </form>
                                     </div>
                                 </td>
                             </tr>

@@ -51,6 +51,26 @@
                 </div>
             </div>
         @endif
+        @if(session('warning'))
+            <div class="container mt-4">
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    {{ session('warning') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        @endif
+        @if($errors->any())
+            <div class="container mt-4">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <ul class="mb-0">
+                        @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        @endif
 
 
         <!-- ── Sticky Category Filter ─────────────────────────── -->
@@ -1120,242 +1140,6 @@
                 </div>
             </div>
         </section>
-
-    
-<div class="modal fade enquiry-modal" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
-            <div class="modal-content border-0">
-                <div class="modal-header border-0 pb-0">
-                    <button type="button" class="btn-close-custom" data-bs-dismiss="modal" aria-label="Close">
-                        <i class="ri-close-line"></i>
-                    </button>
-                </div>
-                <div class="modal-body p-4 p-md-5 pt-0">
-                    <div class="contact-form-wrapper border-0 shadow-none p-0">
-                        <h3 class="form-title mb-2" id="enquiryModalLabel">Request a Quote</h3>
-                        <p class="form-subtitle mb-4">Complete the fields below to request details, custom
-                            specifications, or a product brochure.</p>
-
-                        <form method="POST" action="{{ route('contactPost') }}" class="contact-form" id="modalExportForm">
-                            @csrf
-                            <input type="hidden" name="source" value="listing_page">
-                            <div class="row g-4">
-
-                                <!-- Name Field -->
-                                <div class="col-md-6">
-                                    <div class="form-group-custom">
-                                        <label for="modal-name" class="form-label-custom">Full Name</label>
-                                        <input type="text" id="modal-name" class="form-control-custom"
-                                            placeholder="e.g. John Doe" required name="name" required>
-                                    </div>
-                                </div>
-
-                                <!-- Email Field -->
-                                <div class="col-md-6">
-                                    <div class="form-group-custom">
-                                        <label for="modal-email" class="form-label-custom">Corporate Email</label>
-                                        <input type="email" id="modal-email" class="form-control-custom"
-                                            placeholder="e.g. name@company.com" required name="email" required>
-                                    </div>
-                                </div>
-
-                                <!-- Phone Field (using intl-tel-input) -->
-                                <div class="col-md-6">
-                                    <div class="form-group-custom">
-                                        <label for="modal-phone" class="form-label-custom">Phone Number</label>
-                                        <input type="tel" id="modal-phone" class="form-control-custom w-100" required name="phone" required>
-                                    </div>
-                                </div>
-
-                                <!-- Country Dropdown -->
-                                <div class="col-md-6">
-                                    <div class="form-group-custom">
-                                        <label for="modal-country" class="form-label-custom">Country</label>
-                                        <select id="modal-country" name="country" class="form-select-custom" required>
-                                            <option value="" disabled selected>Select your country</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <!-- Business Profile Dropdown -->
-                                <div class="col-md-6">
-                                    <div class="form-group-custom">
-                                        <label for="modal-businessType" class="form-label-custom">Business
-                                            Profile</label>
-                                        <select id="modal-businessType" name="business_type" class="form-select-custom" required>
-                                            <option value="" disabled selected>Select business profile...</option>
-                                            <option value="Importer">Importer</option>
-                                            <option value="Distributor">Distributor</option>
-                                            <option value="Wholesaler">Wholesaler</option>
-                                            <option value="Retail Chain">Retail Chain</option>
-                                            <option value="Buying House">Buying House</option>
-                                            <option value="Hotel">Hotel</option>
-                                            <option value="Brand Owner">Brand Owner</option>
-                                            <option value="Other">Other</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <!-- Estimated Order Quantity Field -->
-                                <div class="col-md-6">
-                                    <div class="form-group-custom">
-                                        <label for="modal-orderQuantity" class="form-label-custom">Estimated Order
-                                            Quantity</label>
-                                        <select id="modal-orderQuantity" name="order_quantity" class="form-select-custom" required>
-                                            <option value="" disabled selected>Select estimated order...</option>
-                                            <option value="Sample Order">Sample Order</option>
-                                            <option value="20ft Container">20ft Container</option>
-                                            <option value="40ft Container">40ft Container</option>
-                                            <option value="Multiple Containers">Multiple Containers</option>
-                                            <option value="LCL / Trial Order">LCL / Trial Order</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <!-- Categories checkboxes (7 Categories) -->
-                                <div class="col-12">
-                                    <div class="form-group-custom">
-                                        <label class="form-label-custom mb-3">Product Categories of Interest:</label>
-                                        <div class="row g-2">
-
-                                            <div class="col-sm-6">
-                                                <label class="checkbox-card-label">
-                                                    <input type="checkbox" name="categories[]" name="categories" value="Cotton Terry Towels"
-                                                        class="checkbox-card-input">
-                                                    <span class="checkbox-card-content">
-                                                        <span class="checkbox-card-icon"><i
-                                                                class="ri-check-line"></i></span>
-                                                        <span class="checkbox-card-text">Cotton Terry Towels</span>
-                                                    </span>
-                                                </label>
-                                            </div>
-
-                                            <div class="col-sm-6">
-                                                <label class="checkbox-card-label">
-                                                    <input type="checkbox" name="categories[]" name="categories" value="Mixed Towels"
-                                                        class="checkbox-card-input">
-                                                    <span class="checkbox-card-content">
-                                                        <span class="checkbox-card-icon"><i
-                                                                class="ri-check-line"></i></span>
-                                                        <span class="checkbox-card-text">Mixed Towels</span>
-                                                    </span>
-                                                </label>
-                                            </div>
-
-                                            <div class="col-sm-6">
-                                                <label class="checkbox-card-label">
-                                                    <input type="checkbox" name="categories[]" name="categories" value="Multi-Stripe Towels"
-                                                        class="checkbox-card-input">
-                                                    <span class="checkbox-card-content">
-                                                        <span class="checkbox-card-icon"><i
-                                                                class="ri-check-line"></i></span>
-                                                        <span class="checkbox-card-text">Multi-Stripe Towels</span>
-                                                    </span>
-                                                </label>
-                                            </div>
-
-                                            <div class="col-sm-6">
-                                                <label class="checkbox-card-label">
-                                                    <input type="checkbox" name="categories[]" name="categories" value="Kitchen Towels"
-                                                        class="checkbox-card-input">
-                                                    <span class="checkbox-card-content">
-                                                        <span class="checkbox-card-icon"><i
-                                                                class="ri-check-line"></i></span>
-                                                        <span class="checkbox-card-text">Kitchen Towels</span>
-                                                    </span>
-                                                </label>
-                                            </div>
-
-                                            <div class="col-sm-6">
-                                                <label class="checkbox-card-label">
-                                                    <input type="checkbox" name="categories[]" name="categories" value="Hotel Towels"
-                                                        class="checkbox-card-input">
-                                                    <span class="checkbox-card-content">
-                                                        <span class="checkbox-card-icon"><i
-                                                                class="ri-check-line"></i></span>
-                                                        <span class="checkbox-card-text">Hotel Towels</span>
-                                                    </span>
-                                                </label>
-                                            </div>
-
-                                            <div class="col-sm-6">
-                                                <label class="checkbox-card-label">
-                                                    <input type="checkbox" name="categories[]" name="categories" value="Beach Towels"
-                                                        class="checkbox-card-input">
-                                                    <span class="checkbox-card-content">
-                                                        <span class="checkbox-card-icon"><i
-                                                                class="ri-check-line"></i></span>
-                                                        <span class="checkbox-card-text">Beach Towels</span>
-                                                    </span>
-                                                </label>
-                                            </div>
-
-                                            <div class="col-sm-6">
-                                                <label class="checkbox-card-label">
-                                                    <input type="checkbox" name="categories[]" name="categories" value="Garments"
-                                                        class="checkbox-card-input">
-                                                    <span class="checkbox-card-content">
-                                                        <span class="checkbox-card-icon"><i
-                                                                class="ri-check-line"></i></span>
-                                                        <span class="checkbox-card-text">Garments Collection</span>
-                                                    </span>
-                                                </label>
-                                            </div>
-
-                                            <div class="col-sm-6">
-                                                <label class="checkbox-card-label">
-                                                    <input type="checkbox" name="categories[]" name="categories" value="All Products"
-                                                        class="checkbox-card-input">
-                                                    <span class="checkbox-card-content">
-                                                        <span class="checkbox-card-icon"><i
-                                                                class="ri-check-line"></i></span>
-                                                        <span class="checkbox-card-text">All Products</span>
-                                                    </span>
-                                                </label>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Message Field -->
-                                <div class="col-12">
-                                    <div class="form-group-custom">
-                                        <label for="modal-message" class="form-label-custom">Message / Custom
-                                            Requirements</label>
-                                        <textarea id="modal-message" name="message" rows="4" class="form-control-custom"
-                                            placeholder="Please specify target volume, sizes, custom GSM, or design requirements..."
-                                            required></textarea>
-                                    </div>
-                                </div>
-
-                                <!-- Submit Button -->
-                                
-                                <!-- Google ReCaptcha -->
-                                <div class="col-12">
-                                    <div class="mb-3">
-                                        <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
-                                    </div>
-                                </div>
-<div class="col-12 mt-4 text-center">
-                                    <button type="submit" class="btn-accent px-5 py-2.5 mb-3"
-                                        style="font-size: 0.95rem;">Send Export Enquiry</button>
-                                    <div>
-                                        <span class="form-response-note">
-                                            <i class="ri-time-line"></i> We respond to all business enquiries within 24
-                                            working hours.
-                                        </span>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 @endsection
 
 @section('js')
@@ -1519,6 +1303,13 @@
                     e.preventDefault();
                     alert("Please select at least one product category of interest.");
                     return;
+                }
+
+                if (iti && phoneInputEl) {
+                    const fullNumber = iti.getNumber();
+                    if (fullNumber) {
+                        phoneInputEl.value = fullNumber;
+                    }
                 }
             });
         });
